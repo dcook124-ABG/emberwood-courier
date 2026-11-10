@@ -32,52 +32,52 @@
     { id: "lanterns", name: "The Hooded Lanterns", leader: "Lord Commander Elias Drexel",
       svg: crest("#2f5a3c", "#d6b34c", '<path d="M43 46h34l-4-12H47z" fill="#231b18"/><rect x="45" y="46" width="30" height="48" rx="3" fill="#ecc66b" stroke="#231b18" stroke-width="3"/><path d="M55 47v46M65 47v46M46 62h28M46 78h28" stroke="#231b18" stroke-width="2"/><path d="M40 94h40l-5 8H45z" fill="#231b18"/><path d="M60 34c0-8 0-13 0-16M60 18c-10-1-18 4-21 15 5-5 9-7 14-7M60 18c10-1 18 4 21 15-5-5-9-7-14-7M60 18c-2-5-1-7 0-10 1 3 2 5 0 10" fill="none" stroke="#d6b34c" stroke-width="4" stroke-linecap="round"/>'),
       quote: "One gate in three years. We'll take the other four. Sign on and help us be quicker about it.", cite: "A sergeant at Shepherd's Gate",
-      who: "Old City Watch and whatever the civil war didn't finish off, in green cloaks with yellow trim. On paper they're the 4th Provisional Expeditionary Force to Reclaim the Capital, which no one has said twice without stopping for a drink.",
-      want: "The capital rebuilt, the realm put back together, and a rightful arse on the throne. Several noble houses are footing the bill, each hoping the arse turns out to be a cousin.",
-      caution: "They count scavengers among the vermin to be cleared from the city. Make yourself useful before they get around to you.",
+      who: "What's left of the old City Watch, plus whatever the civil war didn't finish off, in green cloaks with yellow trim. On paper they're the 4th Provisional Expeditionary Force to Reclaim the Capital. Nobody has ever said the whole name twice without stopping for a drink.",
+      want: "The capital rebuilt, the kingdom stitched back together, and a rightful arse on the throne. Several noble houses are paying the bills, each of them quietly hoping the arse turns out to be a cousin.",
+      caution: "They count scavengers among the vermin to be cleared out of the city. Make yourself useful before they get around to you.",
       find: "Ansom and Petra Lang, at the Lantern Watchtower.", link: "emberwood.html#watchtower" },
     { id: "queens-men", name: "The Queen's Men", leader: "The Queen of Thieves",
       svg: crest("#8d211d", "#e0b0a4", '<g transform="rotate(-8 60 68)"><rect x="35" y="29" width="50" height="76" rx="5" fill="#f4ecdc" stroke="#231b18" stroke-width="3"/><path d="M60 50l14 18-14 18-14-18z" fill="#b3201c" stroke="#231b18" stroke-width="1.6"/><text x="44" y="46" font-family="IM Fell English, Georgia, serif" font-size="16" fill="#b3201c">Q</text><text x="76" y="93" text-anchor="middle" font-family="IM Fell English, Georgia, serif" font-size="16" fill="#b3201c" transform="rotate(180 76 88)">Q</text></g>'),
       quote: "Everything in that city belongs to somebody now. Mostly us.", cite: "A smiling stranger, Skull & Sword",
-      who: "A hundred gangs of brigands, smugglers, and cutthroats, every one paying tribute to a woman no two witnesses have described alike. She signs her orders with the Queen of Diamonds.",
+      who: "A hundred gangs of brigands, smugglers, and cutthroats, every one paying tribute to a woman no two witnesses describe the same way. Tall. Short. Young. Old. Scarred. Beautiful. She signs her orders with the Queen of Diamonds.",
       want: "A criminal empire, and a city kept exactly as lawless as it is this minute.",
-      caution: "You get a note pinned to that card, you do what it says. That is not the Courier's opinion. It is the Courier's policy.",
+      caution: "If you find a note pinned to that card, you do what it says. That is not the Courier's opinion. It is the Courier's policy.",
       find: "Blackjack Mel, at the back tables of the Skull & Sword.", link: "emberwood.html#skull-and-sword" },
     { id: "silver-order", name: "Knights of the Silver Order", leader: "Knight-Captain Theodore Marshal",
       svg: crest("#c9ccd4", "#a97c28", '<path d="M42 58h36c0 18-8 28-18 28s-18-10-18-28z" fill="#c79a34" stroke="#231b18" stroke-width="3"/><path d="M60 86v18M46 108h28l-4-5H50z" fill="#c79a34" stroke="#231b18" stroke-width="3" stroke-linejoin="round"/><path d="M60 20c10 11 15 18 11 28-2 6-6 9-11 9s-9-3-11-9c-3-8 2-12 5-16 1 4 3 6 5 6 2-6 0-12 1-18z" fill="#e88a2a" stroke="#231b18" stroke-width="2.6" stroke-linejoin="round"/>'),
       quote: "The stone is not treasure. It is rot that learned to shine.", cite: "A knight on the Emberwood road",
-      who: "Paladins and oathsworn knights of the Sacred Flame, marched up from Elyria on the say-so of the Divine Matriarch, in silver plate and clean white tabards, in this mud.",
+      who: "Paladins and oathsworn knights of the Sacred Flame, marched up from Elyria at the word of the Divine Matriarch, in silver plate and clean white tabards. In this mud. Every single morning. Nobody has worked out how.",
       want: "Every crystal smashed, every monster put down, and the Falling Fire heresy stamped flat.",
-      caution: "The nicest manners you'll meet this side of the grave, and they'll be watching your hands if you work spells.",
+      caution: "The finest manners you'll meet this side of the grave. If you cast spells, they'll be watching your hands the whole time they're being polite.",
       find: "High Flamekeeper Ophelia Reed, at the Chapel of Saint Ardenna.", link: "emberwood.html#chapel" },
     { id: "falling-fire", name: "Followers of the Falling Fire", leader: "Lucretia Mathias",
       svg: crest("#17131d", "#efece4", '<path d="M86 34L34 94M92 42L48 100M78 28L26 80" stroke="#efece4" stroke-width="3.4" stroke-linecap="round" fill="none"/><path d="M90 20l5 11 12 2-9 8 2 12-10-6-11 6 2-12-9-8 12-2z" fill="#efece4" stroke="#17131d" stroke-width="1.5"/>'),
       quote: "The star fell for a reason. Come and see it, and you'll understand.", cite: "A pilgrim on Champion's Way",
-      who: "Pilgrims by the hundred, farmers and laborers mostly, in sackcloth, walking toward the Crater behind a former Flamekeeper the Faith has named a heretic.",
-      want: "Every faithful soul delivered to the Crater and the whole ruin made holy ground. They say the stone's a gift from on high, sent against a darkness that hasn't got here yet. That's the cheerful part.",
+      who: "Pilgrims by the hundred, farmers and laborers mostly, in sackcloth, walking toward the Crater behind a former Flamekeeper the Faith has named a heretic. They sing as they go. You'll hear them before you see them.",
+      want: "Every faithful soul delivered to the Crater and the whole ruin made holy ground. They say the stone is a gift from on high, sent against a darkness that hasn't arrived yet. That's the cheerful part.",
       caution: "Those who finish the road take part in a rite at the Crater's Edge. The Flamekeepers have a word for it, and the word is blasphemy.",
       find: "Nathaniel Flint, at Hendrix Farm.", link: "emberwood.html#hendrix-farm" },
     { id: "academy", name: "The Amethyst Academy", leader: "Archwizard Eldrick Runeweaver",
       svg: crest("#4a2a85", "#d6b34c", '<g fill="none" stroke="#d6b34c" stroke-width="3"><rect x="34" y="40" width="52" height="52"/><rect x="34" y="40" width="52" height="52" transform="rotate(45 60 66)"/></g><ellipse cx="60" cy="66" rx="18" ry="12" fill="#f4ecdc" stroke="#231b18" stroke-width="2.4"/><circle cx="60" cy="66" r="7" fill="#d6b34c" stroke="#231b18" stroke-width="2"/><circle cx="60" cy="66" r="3" fill="#231b18"/>'),
       quote: "Bring it to us in a lead box and we pay in gold. Bring it in your pocket and we pay for the funeral.", cite: "Overheard at the Red Lion Hotel",
-      who: "A school for mages and a guild with its fist round the whole trade in magic. They keep damn few of their own in the field and pay the likes of you to take the risk.",
-      want: "The stone studied and put to work, and their great stronghold, the Inscrutable Tower, handed back.",
-      caution: "Polite, punctual, and they've never yet told an outsider one thing more than was asked. They'll pay. They won't shake your hand.",
+      who: "Part school for mages, part guild with its fist closed round the whole trade in magic. They keep precious few of their own people in the field and pay the likes of you to take the risk instead. They'll tell you it isn't cowardice. It's procurement.",
+      want: "The stone studied and put to work, and their great stronghold, the Inscrutable Tower, handed back to them.",
+      caution: "Polite, punctual, and they've never once told an outsider one thing more than was asked. They'll pay you. They won't shake your hand.",
       find: "The Academy's buyer, at the Red Lion Hotel.", link: "emberwood.html#red-lion" }
   ];
 
   /* Who is at whose throat */
   var GRUDGES = [
     ["lanterns", "queens-men", "war", "The Queen's people sabotage whatever the Lanterns build, and the Lanterns hang whatever they catch."],
-    ["lanterns", "silver-order", "wary", "Both want the monsters dead. The knights say nothing gets rebuilt till every stone is ash, and the Lanterns mean to live there."],
-    ["lanterns", "falling-fire", "wary", "One side wants a capital and the other a holy ruin, and the pilgrims keep wandering through the middle of the Lanterns' war."],
+    ["lanterns", "silver-order", "wary", "Both want the monsters dead. The knights say nothing gets rebuilt till every stone is ash. The Lanterns would like to live there afterward."],
+    ["lanterns", "falling-fire", "wary", "One side wants a capital and the other a holy ruin, and the pilgrims keep wandering, singing, through the middle of the Lanterns' war."],
     ["lanterns", "academy", "wary", "Civil, for now. The Lanterns would dearly like to know what the mages want with their city."],
-    ["queens-men", "silver-order", "war", "The Order would hang every last one of them given a free afternoon. The Queen takes care not to give them one."],
-    ["queens-men", "falling-fire", "war", "Pilgrims carry all they own and can't fight for it. The gangs thank the Flame for them daily."],
-    ["queens-men", "academy", "trade", "The mages pay top coin for stones and don't ask whose they were. The Queen's people know it."],
-    ["silver-order", "falling-fire", "war", "Heretics, says the Order, and it means to see their prophet tried. The pilgrims pray for the knights, which doesn't help."],
-    ["silver-order", "academy", "war", "Centuries of burned mages lie between them and only a treaty keeps it from starting again. The knights want the stone destroyed, and the mages want it by the cartload."],
-    ["falling-fire", "academy", "war", "To the pilgrims the stone is holy. The Academy is grinding it up for trinkets."]
+    ["queens-men", "silver-order", "war", "The Order would hang every last one of them given a free afternoon. The Queen takes care never to give them one."],
+    ["queens-men", "falling-fire", "war", "Pilgrims carry everything they own and won't fight for it. The gangs thank the Flame for them daily."],
+    ["queens-men", "academy", "trade", "The mages pay top coin for stones and never ask whose they were. The Queen's people know it."],
+    ["silver-order", "falling-fire", "war", "Heretics, says the Order, and it means to see their prophet tried. The pilgrims pray for the knights, which does not help."],
+    ["silver-order", "academy", "war", "Centuries of burned mages lie between them, and only a treaty keeps it from starting again. The knights want the stone destroyed. The mages want it by the cartload."],
+    ["falling-fire", "academy", "war", "To the pilgrims the stone is holy. The Academy grinds it up for trinkets."]
   ];
   var WEB_POS = {};
   function updateWeb(id) {
@@ -188,7 +188,7 @@
     var bgLabel = form.querySelector("[data-bg-question]");
     function syncQuestion() {
       var q = BACKGROUND_ASKS[bg.value];
-      bgLabel.textContent = q || "Choose a background above, and it will ask you something.";
+      bgLabel.textContent = q || "Choose a background above, and it'll ask you something.";
     }
     function store() {
       var data = {};
@@ -220,7 +220,7 @@
         var t = document.createElement("textarea");
         t.value = body; t.style.position = "fixed"; t.style.opacity = "0";
         document.body.appendChild(t); t.select();
-        try { document.execCommand("copy"); done(); } catch (e) { status.textContent = "Could not copy on this device."; }
+        try { document.execCommand("copy"); done(); } catch (e) { status.textContent = "Couldn't copy on this device. Do it the old way: write it down."; }
         t.remove();
       }
       if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(body).then(done, fallback);
@@ -229,18 +229,18 @@
     form.querySelector("[data-clear]").addEventListener("click", function () {
       fields.forEach(function (f) { f.value = ""; });
       store(); syncQuestion();
-      status.textContent = "Cleared.";
+      status.textContent = "Cleared. A clean slate. Emberwood won't hand you many.";
     });
   }
 
   /* The Assayer's Plate */
   var SIZES = [
-    { id: "chip", name: "Chip", k: .14, value: "10 gp", measure: "Hardly worth the glove", note: "Flakes off the bigger stones. Save up enough and you can buy yourself one good night at the Lily, and regret it." },
-    { id: "fragment", name: "Fragment", k: .36, value: "100 gp", measure: "About the size of a finger", note: "What most prospectors bring home, on the days they come home." },
+    { id: "chip", name: "Chip", k: .14, value: "10 gp", measure: "Hardly worth the glove", note: "Flakes knocked off the bigger stones. Save up enough and you can buy yourself one fine night at the Lily, and one fine morning of regret." },
+    { id: "fragment", name: "Fragment", k: .36, value: "100 gp", measure: "About the size of a finger", note: "What most prospectors bring home, on the days they come home. Keep it in lead. Don't keep it under your pillow. You'll start to like the humming." },
     { id: "shard", name: "Shard", k: .62, value: "500 gp", measure: "A decent handful", note: "The size that leaves Caravan Court by the wagonload, packed in lead and guarded by people who've stopped blinking." },
-    { id: "crystal", name: "Crystal", k: .86, value: "1,000 gp", measure: "As big as a fist", note: "Scarce enough that the traders quit arguing and pay very near what it's worth." },
-    { id: "geode", name: "Geode", k: 1.75, value: "5,000 gp", measure: "As big as a pumpkin", geode: true, note: "Pays close to full, if you get it home. Hit one too hard and you'll wish all it did was crumble." },
-    { id: "massive", name: "Massive Cluster", k: 4.6, value: "Priceless", measure: "Taller than a man, and then some", note: "It ran off the Courier's plate. Nobody has walked out of the ruins carrying one, and nobody's fixing to." }
+    { id: "crystal", name: "Crystal", k: .86, value: "1,000 gp", measure: "As big as a fist", note: "Scarce enough that the traders quit arguing and pay very near what it's worth. When a trader stops arguing with you, check your purse and your back." },
+    { id: "geode", name: "Geode", k: 1.75, value: "5,000 gp", measure: "As big as a pumpkin", geode: true, note: "Pays close to full, if you can get it home. Don't drop it. Don't hit it. Hit one too hard and you'll wish all it did was crumble." },
+    { id: "massive", name: "Massive Cluster", k: 4.6, value: "Priceless", measure: "Taller than a man, and then some", note: "It ran clean off the Courier's plate. Nobody has ever walked out of the ruins carrying one. Several have tried, and they didn't walk out either." }
 ];
 
   function shard(g, cx, base, w, h, lean) {
@@ -345,7 +345,7 @@
       return note;
     }
     var bell = block("The Tally Bell", "-.5deg");
-    bell.appendChild(el("p", "tally__sub", "Rung from the Old Tithe House for every claim paid. " + issue.bell));
+    bell.appendChild(el("p", "tally__sub", "Rung from the Old Tithe House for every claim paid. The whole camp stops talking to count. " + issue.bell));
     var ul = el("ul");
     claimList(ul, issue.claims);
     bell.appendChild(ul);
@@ -353,7 +353,7 @@
     simpleList(block("Posted About Town", ".4deg"), (issue.posted_notices || []).map(function (p) { return { lead: p.where, text: p.text }; }), "Nothing posted this issue.");
     simpleList(block("Word on the Street", "-.6deg"), (issue.rumors || []).map(function (r) { return { text: r }; }), "Quiet, for once. The Courier does not trust it.");
     var risk = block("District Danger", ".5deg");
-    simpleList(risk, (issue.risk || []).map(function (r) { return { lead: r.district, text: r.rating }; }), "The firm's risk tables have not been posted yet.");
+    simpleList(risk, (issue.risk || []).map(function (r) { return { lead: r.district, text: r.rating }; }), "The firm's risk tables are still being totaled. A clerk is working on them by lamplight.");
     host.appendChild(grid);
   }
   function initLedger() {
@@ -364,7 +364,7 @@
     renderIssue(host, latest);
     var past = document.querySelector("[data-past]");
     if (issues.length < 2) {
-      past.appendChild(el("p", "ledger-empty", "This is the first Ledger. Older issues will be kept here."));
+      past.appendChild(el("p", "ledger-empty", "This is the first Ledger. Older issues will be kept here, which is more than can be said for some of our clients."));
       return;
     }
     issues.slice(1).forEach(function (issue) {
@@ -380,17 +380,17 @@
 
   /* The City That Was: dates follow the sourcebook's timeline */
   var YEARS = [
-    { y: 1111, t: "The Stars Fall", d: "Thirteen minutes past eight on the evening of the sixteenth of September, a storm of falling stars comes down on Drakkenheim with the whole royal family at home." },
-    { y: 1112, t: "An Army Dies in the Mist", d: "The crown sends an army to take back the capital. Thousands die in the Haze. The few who stagger out are raving, and don't last." },
-    { y: 1113, t: "A Prophecy Published", d: "Lucretia Mathias called the Fall years ahead and got shut up for it. Now she expands her writings into the Testament of the Falling Fire, and this time people read them." },
-    { y: 1114, t: "Brother Against Sister", d: "Two more expeditions go into the mist and come to nothing, and the squabble between Mannfred and Cecilia von Kessel over the empty chair turns into a war." },
+    { y: 1111, t: "The Stars Fall", d: "At thirteen minutes past eight on the evening of the sixteenth of September, a storm of falling stars comes down on Drakkenheim with the whole royal family at home." },
+    { y: 1112, t: "An Army Dies in the Mist", d: "The crown sends an army to take back the capital. Thousands die in the Haze. The few who stagger out are raving, and they don't last long." },
+    { y: 1113, t: "A Prophecy Published", d: "Lucretia Mathias predicted the Fall years ahead and was silenced for it. Now she expands her writings into the Testament of the Falling Fire, and this time people read them." },
+    { y: 1114, t: "Brother Against Sister", d: "Two more expeditions go into the mist and come to nothing, and the quarrel between Mannfred and Cecilia von Kessel over the empty throne turns into a war." },
     { y: 1115, t: "Some Come Back", d: "With the armies busy killing each other, adventurers try the ruins for plunder. A few come back alive, with stories of monsters and samples of a strange crystal." },
     { y: 1116, t: "A Pilgrim at the Crater", d: "Lucretia Mathias walks to the Crater's Edge on her own two feet and carries what she found there back to Elyria." },
     { y: 1117, t: "Delerium Is Named", d: "The Amethyst Academy starts paying for what folks have been calling meteor shards, and gives the crystal the name that stuck." },
-    { y: 1119, t: "The War Runs Out of Claimants", d: "Assassins do for Mannfred von Kessel and his children. Days later Cecilia is dead too, of causes no physician will put a name to. There being nobody left to fight for, the war just quits." },
-    { y: 1120, t: "Cast Out", d: "The Divine Matriarch excommunicates Lucretia Mathias for heresy. Mathias goes back to Drakkenheim, which is not the punishment anybody had in mind." },
+    { y: 1119, t: "The War Runs Out of Claimants", d: "Assassins kill Mannfred von Kessel and his children. Days later Cecilia is dead too, of causes no physician will name. With nobody left to fight for, the war simply stops." },
+    { y: 1120, t: "Cast Out", d: "The Divine Matriarch excommunicates Lucretia Mathias for heresy. Mathias goes back to Drakkenheim, which is not the punishment anyone had in mind." },
     { y: 1121, t: "Emberwood Booms", d: "Adventurers come up the road in numbers, and a village that had been quietly dying finds itself the favorite stop of every treasure hunter and cutthroat in the realm." },
-    { y: 1123, t: "The Lanterns Enter the City", d: "The 4th Provisional Expeditionary Force to Reclaim the Capital makes its first forays into the ruins. Inside a season, everybody's calling them the Hooded Lanterns." },
+    { y: 1123, t: "The Lanterns Enter the City", d: "The 4th Provisional Expeditionary Force to Reclaim the Capital makes its first forays into the ruins. Within a season, everybody is calling them the Hooded Lanterns." },
     { y: 1124, t: "A Gate Is Taken", d: "The Lanterns dig in at the old Shepherd's Gate and learn that taking a gate is the easy part." },
     { y: 1126, t: "You Arrive", d: "Fifteen years on, the city's dead and the money isn't. You've come about the money." }
 ];
@@ -438,15 +438,15 @@
   }
   var ROYALS = [
     { name: "King Ulrich IV", age: "Fate unknown", art: portrait('<path d="M40 30l5-20 8 10 7-14 7 14 8-10 5 20z" fill="#c79a34" stroke="#241d2e" stroke-width="2"/><circle cx="46" cy="100" r="2" fill="#efe6d0"/><circle cx="74" cy="100" r="2" fill="#efe6d0"/><circle cx="60" cy="96" r="2" fill="#efe6d0"/>'),
-      text: "Portly, wiry-bearded, ordinary of face. Painters gave him a barrel chest and a heroic curl." },
+      text: "Portly, wiry-bearded, ordinary of face. His portrait painters gave him a barrel chest and a heroic curl, and were well paid for it." },
     { name: "Queen Lenore", age: "Fate unknown", art: portrait('<path d="M38 44c0-34 44-34 44 0 2-16-40-16-44 0z" fill="#b5532a"/><path d="M42 86c10 14 26 14 36 0" fill="none" stroke="#2f9a6a" stroke-width="4" stroke-dasharray="2 5" stroke-linecap="round"/>'),
-      text: "A Caspian princess, six feet tall, hair dyed bright orange. Never without her necklace of eleven emeralds." },
+      text: "A Caspian princess, six feet tall, hair dyed bright orange. Never seen without her necklace of eleven emeralds. Hard to miss, and yet." },
     { name: "Prince Leonard", age: "Eighteen at the Fall", art: portrait('<path d="M92 16L78 92" stroke="#241d2e" stroke-width="6"/><path d="M80 34h20" stroke="#241d2e" stroke-width="6"/><path d="M50 106l10-10 10 10-10 6z" fill="#c79a34"/>'),
       text: "A soldier by temperament. Sandy hair, and a breastplate worked with dragons." },
     { name: "Princess Katarina", age: "Eleven at the Fall", art: portrait('<path d="M34 34c14-14 38-16 56-4-20-2-40 2-56 4z" fill="#241d2e"/><path d="M42 30c10-14 26-14 34-4" fill="#241d2e"/><path d="M84 30c8-4 14-10 16-16" stroke="#a03a2b" stroke-width="3" fill="none"/>'),
       text: "Auburn-haired and wide-eyed. Wore trousers and a cape, and stole the hats of visiting lords." },
     { name: "Princess Eliza", age: "Six at the Fall", art: '<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M34 120C36 100 48 92 60 92S84 100 86 120Z" fill="#241d2e"/><circle cx="60" cy="72" r="16" fill="#241d2e"/><path d="M38 74c-2-32 46-32 44 0-6-18-38-18-44 0z" fill="#241d2e" stroke="#e0d2ae" stroke-width="2"/><path d="M52 92l8 8 8-8-8-4z" fill="#a03a2b"/></svg>',
-      text: "Button-nosed, in a bonnet and patterned dress. If she lived, no one would know her face now." }
+      text: "Button-nosed, in a bonnet and a patterned dress. If she lived, no one would know her face now." }
   ];
 
   function initPosters() {

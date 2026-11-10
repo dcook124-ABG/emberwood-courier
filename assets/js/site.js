@@ -4,21 +4,21 @@
   var SECTIONS = [
     { id: "home", file: "index.html", name: "Front Page", ready: true, nav: true },
     { id: "emberwood", file: "emberwood.html", name: "Emberwood", ready: true, nav: true, layer: "essential",
-      deck: "Where to sleep, where to drink, and who'll sew you up after.", step: "Learn where the beds are, and who to stay clear of." },
+      deck: "Where to sleep, where to drink, and who'll stitch you shut after.", step: "Learn where the beds are, and which smiles to walk past." },
     { id: "dark-city", file: "dark-city.html", name: "The Dark City", ready: true, nav: true, layer: "essential",
-      deck: "What the Haze does to you, and what you had better not touch.", step: "Find out what is waiting past the gate." },
+      deck: "A drowned city of colored fog and humming stone, and the five rules that keep you breathing in it.", step: "See what's waiting past the covered bridge." },
     { id: "banners", file: "banners.html", name: "The Five Banners", ready: true, nav: true, layer: "essential",
-      deck: "Five powers, one dead city, and every one of them short of help.", step: "Meet the people about to offer you work." },
+      deck: "Five powers, one dead city, and not one of them with bodies to spare.", step: "Meet the people about to offer you work, and what it'll cost you." },
     { id: "fortune", file: "fortune.html", name: "A Fortune in the Rubble", ready: true, nav: true, layer: "essential",
-      deck: "What the stones will fetch, and who is fool enough to pay it.", step: null },
+      deck: "What the stones will fetch, who's buying, and what they leave out.", step: null },
     { id: "why", file: "why-have-you-come.html", name: "Why Have You Come?", ready: true, nav: true, layer: "essential",
-      deck: "Who you were before the road brought you here.", step: "Decide who your character is, and why they came." },
+      deck: "Who you were before the road got its hooks in you.", step: "Decide who your character is, and what dragged them here." },
     { id: "ledger", file: "ledger.html", name: "The Ledger", ready: true, nav: true, layer: "essential",
-      deck: "Who died this week, who is missing, and who is paying to find out.", step: null },
+      deck: "Who died this week, who's missing, and who's paying to find out.", step: null },
     { id: "history", file: "city-that-was.html", name: "The City That Was", ready: true, nav: false, layer: "archive",
-      deck: "The night the stars fell, the war that came after, and the family no one can find." },
+      deck: "The night the stars fell, the war that came after, and five royals nobody can find." },
     { id: "world", file: "wider-world.html", name: "The Wider World", ready: true, nav: false, layer: "archive",
-      deck: "What lies beyond the road, what people pray to there, and why they fear their mages." }
+      deck: "The kingdoms past the pines, the light they pray to, and why a child who sparks gets sent away." }
   ];
 
   function el(tag, cls, text) {
@@ -90,11 +90,11 @@
     });
     var last = el("li");
     last.appendChild(el("span", "path__label path__label--plain", "Report to the Old Tithe House"));
-    last.appendChild(el("span", "path__hint", "All recruits attend orientation before taking a first case. Bring your own boots."));
+    last.appendChild(el("span", "path__hint", "Harrow & Vane hold orientation for every new hire before a first case. Bring your own boots. The firm stopped lending boots. They kept not coming back."));
     host.appendChild(last);
     var steps = SECTIONS.filter(function (s) { return s.step; });
     var done = steps.filter(function (s) { return readList().indexOf(s.id) >= 0; }).length;
-    if (done) host.parentNode.appendChild(el("p", "path__tally", done === steps.length ? "All read. You have no further excuses." : done + " of " + steps.length + " read. Keep walking."));
+    if (done) host.parentNode.appendChild(el("p", "path__tally", done === steps.length ? "All read. You now know more than half the dead did." : done + " of " + steps.length + " read. Keep walking. The road isn't getting any shorter."));
   }
 
   /* Remembers, in this browser only, which sections a reader has finished */
@@ -135,7 +135,7 @@
 
   /* Overheard around camp */
   var OVERHEARD = [
-    ["Fifteen years I've watched fools walk north with their chins up. It's a fine angle for the rats.", "A stallkeeper, Caravan Court"],
+    ["Fifteen years I've watched them walk north with their chins up. It's a fine angle for the rats.", "A stallkeeper, Caravan Court"],
     ["The Haze don't hate you, friend. That's the part you want to understand. It's got no more opinion of you than the rain has, and it'll have your skin off regardless.", "A prospector, Bark & Buzzard"],
     ["Everybody's got two friends in this camp, their gloves and their legs, and I've seen both turn traitor in the same afternoon.", "A scavenger, the Skull & Sword"],
     ["Ask me who I marched for and I'll ask you to step outside. Buy me another and I might forget you brought it up.", "A veteran, the Skull & Sword"],
@@ -150,7 +150,11 @@
     ["Mages'll pay you in good gold and look at you like you tracked something in. You did.", "A delerium runner"],
     ["Every soul in this camp came here to get rich or get even. The rest of us sell them soup.", "A cook, Bark & Buzzard"],
     ["You can tell the ones who've been in. They sit with their backs to the wall and they keep counting the door.", "A barmaid, the Gilded Lily"],
-    ["Somebody worked out how to make money off you dying without even having to stab you. I call that progress.", "A regular, the Skull & Sword"]
+    ["Somebody worked out how to make money off you dying without even having to stab you. I call that progress.", "A regular, the Skull & Sword"],
+    ["First time I saw the Haze from the ridge at sunup, I cried like a baby. Prettiest thing I ever laid eyes on. Took my brother's face off by noon.", "A teamster, Caravan Court"],
+    ["There's a bell tower in the old merchant ward still rings itself on the hour. No rope, no ringer. Some days it's a minute late. Those are the days I stay home.", "A scavenger, Bark & Buzzard"],
+    ["I don't drink with the Tithe House clerks. They know my odds, and they're too polite to say.", "A sellsword, the Skull & Sword"],
+    ["Madam Rochelle says I sing like an angel. Didn't say which direction the angel was headed.", "A performer, the Gilded Lily"]
   ];
   function buildOverheard() {
     var main = document.querySelector("main");
@@ -166,17 +170,17 @@
 
   /* A stranger's lexicon: tap a dotted word for a plain definition */
   var LEXICON = [
-    ["Haze", "The Haze", "The glittering mist over the ruins. Fifteen years and it hasn't lifted, and you can't rest in it."],
-    ["delerium", "Delerium", "The crystal the stars left. Worth a fortune, and it sickens the careless. Wear gloves."],
-    ["Delerium", "Delerium", "The crystal the stars left. Worth a fortune, and it sickens the careless. Wear gloves."],
-    ["Flamekeeper", "Flamekeeper", "A priest of the Sacred Flame. Sworn to poverty, which in this camp takes no effort."],
-    ["Sacred Flame", "The Sacred Flame", "The great faith of the realms. It prays to a light, not a god."],
-    ["Westemär", "Westemär", "The kingdom that had Drakkenheim for its capital. Presently a word on a map."],
-    ["the Fall", "The Fall", "16 September 1111, the night the stars came down on Drakkenheim."],
-    ["the Crater", "The Crater", "The hole the meteor left. There are people who walk to it on purpose."],
-    ["mageborn", "Mageborn", "Born with arcane magic in the blood. Barred by law from titles and land."],
-    ["Reeve", "The Reeve", "The crown's officer over a village. Emberwood's has no crown left to answer to and hasn't noticed."],
-    ["Inner City", "The Inner City", "Everything inside Drakkenheim's walls. You get in by the gates, or you don't."]
+    ["Haze", "The Haze", "The glittering, every-colored fog that sits on the ruins. Fifteen years and it hasn't lifted. Lovely to look at. You can't rest in it."],
+    ["delerium", "Delerium", "The crystal the stars left behind. It hums, it glows, it sells for a fortune, and it sickens the careless. Wear gloves."],
+    ["Delerium", "Delerium", "The crystal the stars left behind. It hums, it glows, it sells for a fortune, and it sickens the careless. Wear gloves."],
+    ["Flamekeeper", "Flamekeeper", "A priest of the Sacred Flame, sworn to poverty. In Emberwood, the vow keeps itself."],
+    ["Sacred Flame", "The Sacred Flame", "The great faith of the realms. It reveres a holy light, not a god, and it's particular about the difference."],
+    ["Westemär", "Westemär", "The kingdom that had Drakkenheim for its capital. These days, a word on a map and an argument in a tavern."],
+    ["the Fall", "The Fall", "16 September 1111, thirteen minutes past eight in the evening. Ask anyone over twenty where they were."],
+    ["the Crater", "The Crater", "The hole the star punched in the city. Pilgrims walk to it on purpose. Some of them sing the whole way."],
+    ["mageborn", "Mageborn", "Born with arcane magic in the blood. Raised by the Academy, and barred by law from titles and land."],
+    ["Reeve", "The Reeve", "The crown's officer over a village. Emberwood's has no crown left to answer to and hasn't let that slow him down."],
+    ["Inner City", "The Inner City", "Everything inside Drakkenheim's walls. You go in by the gates. The walls have opinions about the alternative."]
   ];
   function buildLexicon() {
     var root = document.querySelector("main");
@@ -232,7 +236,7 @@
     var claimsHost = document.querySelector("[data-claims]");
     if (!data || !data.length || !claimsHost) return;
     var latest = data[0];
-    document.querySelector("[data-bell]").textContent = "Rung from the Old Tithe House for every claim paid. " + latest.bell;
+    document.querySelector("[data-bell]").textContent = "Rung from the Old Tithe House for every claim paid. The whole camp stops talking to count. " + latest.bell;
     latest.claims.forEach(function (c) {
       var li = el("li", "claim");
       li.appendChild(el("b", null, c.name));

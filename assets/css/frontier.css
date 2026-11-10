@@ -134,3 +134,31 @@ body {
 .entry__status { font: italic 18px var(--fell); color: var(--violet); }
 .entry__note { font-style: italic; color: var(--ink-soft); font-size: 17px; margin: 8px 0 0; }
 @media (max-width: 640px) { .entry__row { grid-template-columns: 1fr; } }
+
+/* Staff bylines and their add-ins */
+.byline { font: 15px var(--fell-sc); letter-spacing: .08em; color: var(--ink-soft); margin: 8px 0 0; }
+.byline--night { color: var(--lilac); text-align: center; margin-top: 6px; }
+.morgue-note { font: italic 16px/1.35 var(--fell); color: var(--ink-soft); margin: 3px 0 0; }
+.aside {
+  display: block; max-width: 46em; margin: 20px 0; padding: 11px 16px;
+  border-left: 3px solid var(--violet); background: rgba(255, 252, 243, .45);
+  font-size: 18px; line-height: 1.42; break-inside: avoid;
+}
+.aside b { font: 15px var(--woodtype); letter-spacing: .02em; color: var(--oxblood); margin-right: 4px; }
+.aside--corvin { border-left-color: var(--ink); }
+.story__body + .aside, .front .aside { margin-top: 18px; }
+
+/* Ad copy inside the handbills */
+.notice .tagline { display: block; font: 600 17px/1.28 var(--body); margin: 0 0 6px; }
+.notice p { margin: 0 0 7px; }
+.notice p.fine { font-size: 16px; font-style: italic; }
+.notice--classified { text-align: left; }
+.notice--classified p { font-size: 17px; line-height: 1.32; border-bottom: 1px dotted var(--rule); padding-bottom: 5px; }
+.notice--classified p:last-child { border-bottom: 0; }
+.notice--classified b { font: 15px var(--woodtype); }
+
+/* Ledger intro */
+.ledger-intro { max-width: 46em; margin: 6px 0 18px; }
+.ledger-intro p { font-style: italic; color: var(--ink-soft); margin: 0 0 4px; }
+.ledger-intro .byline { font-style: normal; }
+@media (max-width: 900px) { .front { background-image: none; } }
