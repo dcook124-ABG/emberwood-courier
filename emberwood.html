@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Emberwood · The Emberwood Courier</title>
+<meta name="description" content="The last village on the road to Drakkenheim: where to sleep, drink, spend, and get patched up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Rye&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/courier.css">
+<link rel="stylesheet" href="assets/css/frontier.css">
+</head>
+<body data-page="emberwood">
+<a class="skip" href="#main">Skip to the village</a>
+
+<header class="masthead">
+  <div class="wrap masthead__top">
+    <div class="masthead__aside">One Copper</div>
+    <a class="masthead__title" href="index.html">The Emberwood Courier</a>
+    <div class="masthead__aside">Read It, Then Pass It On</div>
+  </div>
+  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list" data-nav></ul></nav>
+</header>
+
+<div class="street"><canvas data-street role="img" aria-label="The main street of Emberwood at dusk: false-front buildings, lit windows, and a wagon in the mud."></canvas></div>
+
+<main id="main" class="wrap">
+  <div class="page-head">
+    <p class="kicker">The Last Village on the Road</p>
+    <h1 class="section-title">Emberwood</h1>
+    <p class="deck">You walked the last five miles of Champion's Way expecting a graveyard. You are early.</p>
+  </div>
+  <hr class="double-rule">
+
+  <div class="story__body" style="margin-top:22px">
+    <p>Emberwood was a market and a pub when the stars fell, and if you'd told the folk there what was coming they'd have asked you to finish your drink and go. The Fall put out every window in the place. The years after put out most of the families, as the fields went grey and the pines commenced dying. Two hundred mean, stubborn sons of bitches stayed, on the theory that it was theirs. Then the adventurers came up the road with coin in their boots, and the camp found out what it was for.</p>
+    <p>It's for this: you go north, you come back if you're able, and between the one and the other you are relieved of every copper you own. Half the doors are nailed shut. What's worth finding is a short walk from the square, and what isn't will find you.</p>
+</div>
+
+  <h2 class="section-title" style="margin-top:26px;font-size:clamp(28px,3.4vw,38px)">Emberwood at a Glance</h2>
+  <div class="map-controls">
+    <p class="deck">Tap a number to see what's there.</p>
+    <button type="button" class="ctl" data-tour aria-pressed="false">Walk with Emma, One Gold</button>
+    <button type="button" class="ctl" data-night aria-pressed="false">After Dark</button>
+  </div>
+
+  <div class="map-layout">
+    <div>
+      <div class="map-frame" data-map></div>
+      <p class="map-caption">Sketch by the Courier. Pines not to scale.</p>
+    </div>
+    <div class="map-note-col">
+      <div class="note-wrap" style="--tilt:.5deg">
+        <div class="note place-note" data-note aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
+
+  <section aria-labelledby="directory">
+    <p class="kicker">Where to Find It</p>
+    <h2 id="directory" class="section-title">The Village Directory</h2>
+    <ul class="directory" data-directory></ul>
+  </section>
+
+  <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
+
+  <section aria-labelledby="grumbling">
+    <p class="kicker">A Word on Prices, Before You Complain</p>
+    <h2 id="grumbling" class="section-title">How Things Work Here</h2>
+    <div class="grumble">
+      <p>Nothing grows here. Not a turnip. Every nail, loaf, and bandage comes up that road on a wagon and whoever drove it wants paying, so you'll give double what you gave at home for steel and kit, and five times over for anything you mean to eat. Water goes by the cup, same as ale, and the ale's better. Go on and try to haggle. Folks have. The shopkeep will tell you to take your trade elsewhere, then stand and enjoy your face while you work out there is no elsewhere.</p>
+      <p>Your salvage and your gems and whatever painting you cut out of a dead man's wall will fetch about half of what you've been telling people. Take it. It cost you nothing but the friends.</p>
+      <p>There's no sheriff here, no magistrate, and not one trial in living memory. Keep the peace and you can drink beside the devil himself under any flag you please. Break it and you'll learn how quick two hundred people can come to a verdict, and what they keep the rope for.</p>
+</div>
+  </section>
+
+  <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
+
+  <section aria-labelledby="notices">
+    <p class="kicker">Paid Announcements</p>
+    <h2 id="notices" class="section-title">Notices &amp; Advertisements</h2>
+    <p class="deck">The Courier vouches for none of them.</p>
+    <div class="notices">
+      <article class="notice"><h3>The Bark &amp; Buzzard</h3>Stew, ale, and the best-informed gossip in camp. The Alsbergs also let cottages, several of them recently vacated.</article>
+      <article class="notice"><h3>Village Tours &middot; One Gold</h3>See every shop in Emberwood and hear how everybody who used to drink in them died. Ask for Emma at the dead tree on the road in.<small>Ends at Crowe &amp; Sons Smithy</small></article>
+      <article class="notice"><h3>Crowe &amp; Sons Smithy</h3>Blades sharpened, mail mended, dents beaten out. Bring it back in one piece and we'll see about the rest.</article>
+      <article class="notice notice--firm"><h3>Going In? Who Brings You Out?</h3>Harrow &amp; Vane, Underwriters, write policies against death, capture, and going missing. Capable hands engaged at every season.<small>Contracts, Not Causes &middot; The Old Tithe House</small></article>
+      <article class="notice notice--warn"><h3>Do Not Rest in the Haze</h3>No tent, charm, or common spell will save your sleep in there. Come out to heal. Paid for by the families of those who did not.</article>
+      <article class="notice"><h3>Chapel of Saint Ardenna</h3>The Flame burns for all. Blessings and healing, for those who can make an offering. Prayers for the lost, at no charge.</article>
+      <article class="notice"><h3>The Red Lion Hotel</h3>The only proper inn in Emberwood. Clean beds, locked doors, and guests who keep to themselves. Suites by arrangement.</article>
+      <article class="notice"><h3>Open Mike Night</h3>Songs, poems, and lies about the ruins. Any act allowed. The crowd decides what lands in your hat, and what else does.<small>The Gilded Lily</small></article>
+      <article class="notice"><h3>Gainsbury Expeditionary Supply Co.</h3>Rope, lanterns, rations, picks, and gloves thick enough for the stones. All a crew could want, at prices the road demands.<small>Caravan Court</small></article>
+      <article class="notice notice--warn"><h3>A Warning from the Lanterns</h3>Entry into the city is at the traveller's own risk. Report bandits, cultists, and smugglers to any Lantern scout.</article>
+</div>
+  </section>
+</main>
+
+<footer class="foot">Printed at Emberwood · The Courier Accepts No Liability for Readers Who Ignore Its Advice</footer>
+<noscript><p class="wrap">The village map needs JavaScript to draw itself.</p></noscript>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/emberwood.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Why Have You Come? · The Emberwood Courier</title>
+<meta name="description" content="Backgrounds and questions for new characters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Rye&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/courier.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/frontier.css">
+</head>
+<body data-page="why" data-defer-lexicon>
+<a class="skip" href="#main">Skip to the news</a>
+
+<header class="masthead">
+  <div class="wrap masthead__top">
+    <div class="masthead__aside">One Copper</div>
+    <a class="masthead__title" href="index.html">The Emberwood Courier</a>
+    <div class="masthead__aside">Read It, Then Pass It On</div>
+  </div>
+  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list" data-nav></ul></nav>
+</header>
+
+<main id="main">
+  <section class="night">
+    <div class="wrap">
+      <div class="night__head">
+        <h1>Why Have You Come?</h1>
+        <p>Nobody walks up Champion's Way by accident. Somebody's owed, somebody's dead, or somebody's lying. Work out which, and bring the answer to your first session.</p>
+      </div>
+      <h2>Five Lives That Lead Here</h2>
+      <div class="cards">
+        <button type="button" class="flip" aria-pressed="false"><span class="flip__inner"><span class="flip__face card-front"><span class="flip__title">Continental Nobility</span>Some house in Caspia, Elyria, or Westemär had the misfortune to produce you. The Fall either ruined your family or handed it an opening, and you're here about one or the other. No one with arcane magic may hold a title.<span class="flip__variation"><b>Last of the Line:</b> the only one left, not a copper to your name, come to dig the family back out.</span><span class="flip__hint">Turn over</span></span><span class="flip__face card-back"><span class="flip__title">Ask Yourself</span><span class="flip__ask">Which side did your house back in the war, and who still holds that against you?</span><span class="flip__hint">Turn back</span></span></span></button>
+        <button type="button" class="flip" aria-pressed="false"><span class="flip__inner"><span class="flip__face card-front"><span class="flip__title">Mageborn</span>Magic came in with your blood and the Amethyst Academy came for you soon after. You're out from under them now, inside the laws that bind every mage.<span class="flip__variation"><b>Malfeasant Mage:</b> expelled or self-taught, and careful who finds out.</span><span class="flip__hint">Turn over</span></span><span class="flip__face card-back"><span class="flip__title">Ask Yourself</span><span class="flip__ask">What did the Academy take from you when it took you in, and would they have you back?</span><span class="flip__hint">Turn back</span></span></span></button>
+        <button type="button" class="flip" aria-pressed="false"><span class="flip__inner"><span class="flip__face card-front"><span class="flip__title">Devoted Missionary</span>Your faith sent you, or a vision did, or a prophecy you couldn't get shut of.<span class="flip__variation"><b>Stargazer:</b> you watched the meteor fall, and something's had a hook in you ever since.</span><span class="flip__hint">Turn over</span></span><span class="flip__face card-back"><span class="flip__title">Ask Yourself</span><span class="flip__ask">What sacred purpose brought you here, and would the village chapel bless it?</span><span class="flip__hint">Turn back</span></span></span></button>
+        <button type="button" class="flip" aria-pressed="false"><span class="flip__inner"><span class="flip__face card-front"><span class="flip__title">Survivor</span>You stayed when everybody with sense ran, and you know which streets will kill you.<span class="flip__variation"><b>Veteran of the Civil War:</b> soldier or refugee, you walked away, though not all of you did.</span><span class="flip__hint">Turn over</span></span><span class="flip__face card-back"><span class="flip__title">Ask Yourself</span><span class="flip__ask">What did you lose in those ruins, and what did you have to do to get out?</span><span class="flip__hint">Turn back</span></span></span></button>
+        <button type="button" class="flip" aria-pressed="false"><span class="flip__inner"><span class="flip__face card-front"><span class="flip__title">Treasure Seeker</span>Gold brought you, or relics, and you'd as soon not say which.<span class="flip__hint">Turn over</span></span><span class="flip__face card-back"><span class="flip__title">Ask Yourself</span><span class="flip__ask">What is the one prize worth dying for, and who else wants it?</span><span class="flip__hint">Turn back</span></span></span></button>
+      </div>
+      <h2>Questions for Anyone</h2>
+      <ul class="asks">
+        <li><b>The Fall</b>Where were you the night the stars fell, and who did you know in the city?</li>
+        <li><b>The War</b>Did you march on the capital in 1112, or fight for Mannfred or Cecilia? What followed you home?</li>
+        <li><b>The Banners</b>Which of the five factions would you trust, and which would you never serve? Does anyone you love wear their colors?</li>
+        <li><b>The World</b>Which realm do you call home, and what do they say about you there? What faith do you keep, if any?</li>
+        <li><b>The Road Back</b>If you don't come back, who should be told?</li>
+        <li><b>Each Other</b>Do you know someone else on this road? You might be kin, share a teacher, be old rivals, owe them your life, or have seen their face in a dream.</li>
+      </ul>
+
+      <h2>Write It Down</h2>
+      <form class="entry" data-entry onsubmit="return false">
+        <div class="entry__row">
+          <div><label for="f-name">Name</label><input id="f-name" data-field="name" data-label="Name" autocomplete="off"></div>
+          <div><label for="f-bg">Background</label>
+            <select id="f-bg" data-field="background" data-label="Background">
+              <option value="">Choose one</option><option>Continental Nobility</option><option>Mageborn</option><option>Devoted Missionary</option><option>Survivor</option><option>Treasure Seeker</option>
+            </select></div>
+        </div>
+        <label for="f-bgq" data-bg-question></label><textarea id="f-bgq" data-field="bg-answer" data-label="Background question"></textarea>
+        <label for="f-fall">Where were you the night the stars fell, and who did you know in the city?</label><textarea id="f-fall" data-field="fall" data-label="The night the stars fell"></textarea>
+        <label for="f-war">Where did the war find you, and what followed you home?</label><textarea id="f-war" data-field="war" data-label="The war"></textarea>
+        <label for="f-banner">Which banner would you trust, and which would you never serve?</label><textarea id="f-banner" data-field="banner" data-label="The banners"></textarea>
+        <label for="f-told">If you don't come back, who should be told?</label><textarea id="f-told" data-field="told" data-label="If you don't come back"></textarea>
+        <label for="f-other">Who else on this road do you know?</label><textarea id="f-other" data-field="other" data-label="Others on the road"></textarea>
+        <div class="entry__actions">
+          <button type="button" class="ctl" data-copy>Copy for Your DM</button>
+          <button type="button" class="ctl" data-clear>Start Over</button>
+          <span class="entry__status" data-entry-status aria-live="polite"></span>
+        </div>
+        <p class="entry__note">Nothing here leaves your own browser unless you paste it somewhere. Keep what you like to yourself.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+<footer class="foot">Printed at Emberwood · The Courier Accepts No Liability for Readers Who Ignore Its Advice</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/sections.js"></script>
+</body>
+</html>
