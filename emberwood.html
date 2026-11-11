@@ -34,6 +34,7 @@
     <p class="byline">By Tibbs Mallory, Our Man in the Mud</p>
   </div>
   <hr class="double-rule">
+  <section class="inshort" aria-label="In short"><b>In Short</b><p>Emberwood is the last village on Champion's Way, about five miles south of Drakkenheim, and the only safe place nearby to rest, heal, and resupply. Gear costs double what it does elsewhere, food five times as much, and salvage sells for about half its value. There is no law here but the villagers themselves, and each of the five factions keeps a contact in town.</p></section>
 
   <div class="story__body" style="margin-top:22px">
     <p>Here's Emberwood the way I tell it to anybody buying. Before the Fall it was a market, a pub, and a great many pine trees, and nobody outside the county could have found it with a map and a guide. Then the stars came down on the capital up the road and blew out every window in town. In the years after, the fields went grey, the pines started dying from the top down, and most of the families packed up and left. About two hundred stayed. Mean, stubborn sons of bitches, proud of both, who figured the place was theirs and they'd be damned. Then the adventurers came up the road with coin in their boots, and Emberwood found out what it was for.</p>
@@ -65,7 +66,7 @@
   <section aria-labelledby="directory">
     <p class="kicker">Where to Find It</p>
     <h2 id="directory" class="section-title">The Village Directory</h2>
-    <ul class="directory" data-directory></ul>
+    <ul class="directory" data-directory data-fold-keep="6" data-fold-label="places"></ul>
   </section>
 
   <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
@@ -86,7 +87,7 @@
     <p class="kicker">Paid Announcements</p>
     <h2 id="notices" class="section-title">Notices &amp; Advertisements</h2>
     <p class="deck">The Courier vouches for none of them, and has been paid by all of them.</p>
-    <div class="notices">
+    <div class="notices" data-fold-keep="4" data-fold-label="notices">
       <article class="notice"><h3>The Bark &amp; Buzzard</h3><b class="tagline">Hot Stew. Honest Ale. Nobody Here Will Rob You.</b><p>The only house in Emberwood that can print that last line without the Courier's lawyer clearing his throat. Lamb stew nightly. Cottages to let by the week, cheap, and in fine condition, all things considered. Kick the can out back at your own risk.</p><small>Holger &amp; Karin Alsberg, Proprietors</small></article>
       <article class="notice"><h3>Village Tours &middot; One Gold</h3><b class="tagline">See Emberwood With a Local Expert!</b><p>Every landmark, every legend, and every grisly end, told true by Miss Emma Crowe, who has lived here all her life and remembers everybody who hasn't. Find her up the dead tree on the road in. Payment at the end of the tour. If you try to skip out, she knows where you sleep. She knows where everybody sleeps.</p><small>Ends at Crowe &amp; Sons Smithy</small></article>
       <article class="notice"><h3>Crowe &amp; Sons Smithy</h3><b class="tagline">Repairs &middot; Blades &middot; Honest Appraisal</b><p>Dents hammered out. Edges ground. Buckles, hinges, and straps mended while you wait. Tobias Crowe will tell you what your armor is worth and who cheated you on it, and he will not lower his voice while he does it.</p><p class="fine">The smithy does not repair chests, packs, or barrels that bit you on the way in. Take those to the Chapel.</p></article>
@@ -106,5 +107,6 @@
 <noscript><p class="wrap">The village map needs JavaScript to draw itself.</p></noscript>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/emberwood.js"></script>
+<script src="assets/js/polish.js"></script>
 </body>
 </html>

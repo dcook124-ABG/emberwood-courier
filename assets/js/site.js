@@ -307,6 +307,7 @@
     });
   }
 
+  window.COURIER_SECTIONS = SECTIONS;
   buildNav();
   buildHeadlines();
   buildPath();

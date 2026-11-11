@@ -162,3 +162,94 @@ body {
 .ledger-intro p { font-style: italic; color: var(--ink-soft); margin: 0 0 4px; }
 .ledger-intro .byline { font-style: normal; }
 @media (max-width: 900px) { .front { background-image: none; } }
+
+/* ===================== Polish: navigation, length, legibility ===================== */
+
+/* 2. A header that stays within reach */
+.masthead { position: sticky; top: 0; z-index: 40; transition: box-shadow .2s; }
+.masthead.is-compact { box-shadow: 0 2px 10px rgba(16, 8, 30, .45); }
+.masthead.is-compact .masthead__top { padding-block: 4px 2px; }
+.masthead.is-compact .masthead__title { font-size: 26px; }
+.masthead.is-compact .masthead__aside { display: none; }
+.masthead.is-compact .masthead__top { grid-template-columns: 1fr; text-align: center; }
+@media (max-width: 720px) {
+  .masthead.is-compact .masthead__title { font-size: 21px; }
+  .nav { position: relative; }
+  .nav::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 34px; pointer-events: none; background: linear-gradient(90deg, rgba(18, 13, 36, 0), var(--night)); }
+}
+main h2, main h3[id] { scroll-margin-top: calc(var(--head-h, 110px) + 64px); }
+
+/* 1. On this page */
+.onpage { position: sticky; top: var(--head-h, 110px); z-index: 30; background: rgba(232, 221, 197, .96); border-bottom: 1px solid var(--rule); margin: 0 calc(50% - 50vw); backdrop-filter: blur(3px); }
+.onpage__inner { display: flex; align-items: center; gap: 4px 20px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; padding-block: 8px; }
+.onpage__inner::-webkit-scrollbar { display: none; }
+.onpage__time { font: 15px var(--woodtype); color: var(--oxblood); flex: none; }
+.onpage__link { font: 17px var(--fell-sc); color: var(--ink-soft); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; flex: none; }
+.onpage__link:hover { color: var(--violet); }
+.onpage__link.is-current { color: var(--violet); border-bottom-color: var(--violet); }
+.onpage--static { position: static; background: none; border: 0; }
+.onpage--static .onpage__inner { padding-block: 0 4px; }
+
+/* 3. Front Page: one place to start, and the Ledger in a line */
+.path__also { margin: 14px 0 0; padding-top: 10px; border-top: 1px dotted var(--rule); font-size: 17px; line-height: 1.5; }
+.path__also-tag { font: 16px var(--fell-sc); color: var(--ink-soft); }
+.ledger-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 12px 0; margin: 28px 0 18px; }
+.ledger-line__tag { font: 16px var(--woodtype); color: var(--oxblood); }
+.ledger-line [data-ledger-line] { flex: 1 1 320px; font-style: italic; color: var(--ink-soft); }
+
+/* 4. Folds */
+.fold-btn {
+  all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 8px 16px; margin: 6px 0 4px;
+  font: 17px var(--fell-sc); color: var(--violet); border: 1.5px solid var(--violet); background: var(--paper-note);
+}
+.fold-btn::after { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-3px); transition: transform .2s; }
+.fold-btn[aria-expanded="true"]::after { transform: rotate(-135deg) translateY(-1px); }
+.fold-btn:hover { background: var(--paper-deep); }
+.fold-btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+.night .fold-btn { background: transparent; color: var(--teal); border-color: var(--teal); }
+.story__body.is-folded > p:first-of-type { margin-bottom: 4px; }
+[data-fold-keep] > [hidden], [data-fold-prose] > [hidden] { display: none !important; }
+
+/* 5. One comfortable column for long reading, lighter dividers, tighter rhythm */
+.story__body { column-count: 1 !important; max-width: 42em; }
+.story__body p:first-child::first-letter { font-size: 74px; padding-top: 6px; }
+.gem-rule { margin: clamp(22px, 3.4vw, 34px) 0; }
+.gem-rule::before, .gem-rule::after { height: 0; border-top: 1px solid var(--rule); border-bottom: 0; }
+.gem-rule svg { width: 14px; height: 21px; opacity: .85; }
+.page-head { padding-block: clamp(18px, 3vw, 30px) 12px; }
+.overheard { margin-top: clamp(22px, 3vw, 34px); }
+
+/* 6. In short */
+.inshort { max-width: 46em; margin: 16px 0 6px; padding: 14px 18px; background: var(--paper-note) var(--noise); border-left: 4px solid var(--oxblood); box-shadow: 0 1px 4px rgba(40, 24, 10, .16); }
+.inshort b { display: block; font: 15px var(--woodtype); color: var(--oxblood); letter-spacing: .04em; margin-bottom: 3px; }
+.inshort p { margin: 0; font-size: 19px; line-height: 1.45; }
+.night .inshort { color: var(--ink); }
+
+/* 7. One cue for everything tappable */
+.tap-hint { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; font: 14px var(--woodtype); letter-spacing: .06em; color: var(--violet); }
+.tap-hint::after { content: ""; width: 6px; height: 6px; border-right: 2px solid currentColor; border-top: 2px solid currentColor; transform: rotate(45deg); }
+.crest__name .tap-hint { display: flex; justify-content: center; }
+.flip__hint { font: 14px var(--woodtype) !important; letter-spacing: .06em; display: inline-flex !important; align-items: center; gap: 5px; }
+.flip__hint::after { content: ""; width: 6px; height: 6px; border-right: 2px solid currentColor; border-top: 2px solid currentColor; transform: rotate(45deg); }
+.posters .tap-hint { display: block; margin-top: 8px; }
+.flip, .crest, .size, .year, .directory button, .web__node, .ctl { transition: transform .18s, box-shadow .18s, background-color .18s; }
+.flip:hover .flip__face, .crest:hover, .directory button:hover { transform: translateY(-2px); }
+.directory button:hover .directory__name { text-decoration: underline; text-decoration-color: var(--violet); }
+.size:hover, .year:hover { background: var(--paper-deep); }
+@keyframes pin-call { 0% { stroke: rgba(102, 57, 157, .9); stroke-width: 3; r: 18px; } 100% { stroke: rgba(102, 57, 157, 0); stroke-width: 1; r: 32px; } }
+.pin--hint .pin__ring { animation: pin-call 1.6s ease-out 3; }
+
+/* 10. Legibility */
+:root { --ink-soft: #4a4153; }
+.kicker, .masthead__aside, .in-press, .status, .notice small, .poster__age, .poster-back small, .path__stamp, .byline,
+.web-legend, .place-note__tag, .road-next__tag, .overheard__tag, .lex b, .aside b, .dossier dt, .notice--classified b,
+.directory__num, .place-note__who b, .fine-print, .map-caption, .entry__note { font-size: 16px !important; }
+.status { padding: 1px 7px; }
+.term { background-image: linear-gradient(90deg, #66399d 60%, transparent 60%); background-size: 6px 2px; padding-bottom: 2px; }
+.size, .year, .ctl, .year-nav button { min-height: 44px; }
+.year { padding-top: 30px; }
+.directory button { min-height: 52px; }
+.overheard cite, .pull cite, .dossier__quote cite { font-size: 16px; }
+html, body { overflow-x: clip; }
+.onpage__time, .inshort b, .tap-hint, .flip__hint { font-size: 16px !important; }

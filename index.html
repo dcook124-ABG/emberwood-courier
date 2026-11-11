@@ -63,65 +63,20 @@
 
       <aside class="note-wrap" style="--tilt:.7deg" aria-labelledby="new-here">
         <div class="note">
-          <h2 id="new-here">New Here? Start Here.</h2>
+          <h2 id="new-here">Where to Start</h2>
           <ol class="path__list" data-path>
             <li><a class="path__label link" href="#big-picture">The Big Picture</a><span class="path__hint">One minute, and you'll know what happened.</span></li>
           </ol>
+          <p class="path__also" data-also></p>
         </div>
       </aside>
     </div>
 
-    <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
-
-    <section aria-labelledby="in-paper">
-      <p class="kicker">Read It Twice</p>
-      <h2 id="in-paper" class="section-title">In This Paper</h2>
-      <div class="headlines" data-headlines="essential"></div>
-      <p class="subhead">From the Archive, for the Curious</p>
-      <div class="headlines headlines--small" data-headlines="archive"></div>
-    </section>
-
-    <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
-
-    <section aria-labelledby="latest">
-      <p class="kicker">Posted by Harrow &amp; Vane, Underwriters</p>
-      <h2 id="latest" class="section-title">The Latest Ledger</h2>
-      <div class="board">
-        <div class="board__grid">
-          <div class="note-wrap" style="--tilt:-.8deg">
-            <div class="note">
-              <div class="tally">
-                <svg viewBox="0 0 38 46" aria-hidden="true"><path fill="#b4872f" stroke="#241d2e" stroke-width="2" d="M19 5C10 5 8 15 7 25c-.6 6-2 9-4 11h32c-2-2-3.400-5-4-11C30 15 28 5 19 5Z"/><rect x="17" y="0" width="4" height="6" fill="#241d2e"/><circle cx="19" cy="40" r="4" fill="#241d2e"/></svg>
-                <h3>The Tally Bell</h3>
-              </div>
-              <p class="tally__sub" data-bell></p>
-              <ul data-claims></ul>
-            </div>
-          </div>
-          <div class="note-wrap" style="--tilt:.9deg">
-            <div class="note">
-              <h3>Posted About Town</h3>
-              <ul data-posted></ul>
-            </div>
-          </div>
-          <div class="note-wrap" style="--tilt:-.5deg">
-            <div class="note note--ad">
-              <h3>Going In? Who Brings You Out?</h3>
-              <p style="margin:8px 0 6px"><b>Harrow &amp; Vane, Underwriters</b>, write expedition coverage for those bound for the Dark City. Death, capture, and disappearance, priced by the street.</p>
-              <div class="cover"><b>Death</b>: paid to your named kin</div>
-              <div class="cover"><b>Capture</b>: ransom or extraction</div>
-              <div class="cover"><b>Missing</b>: search and recovery</div>
-              <p style="margin:10px 0 0">Capable hands engaged at every season. Steady hands preferred. Hands, in any event.</p>
-              <p class="motto">Contracts, Not Causes<br>The Old Tithe House</p>
-            </div>
-          </div>
-        </div>
-        <p class="board__foot"><span data-issue></span> <a class="link" href="ledger.html">Read the full Ledger</a></p>
-      </div>
-    </section>
-
-    <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
-
+    <div class="ledger-line">
+      <span class="ledger-line__tag">The Latest Ledger</span>
+      <span data-ledger-line></span>
+      <a class="link" href="ledger.html">Read the full Ledger</a>
+    </div>
     <p class="warning"><strong>Before you read on. (This part is out of character.)</strong> This is a dark fantasy game. Expect violence and gore, foul language, cannibalism, body horror and madness, monsters of every kind including rats and spiders, disaster and war, and religious zealotry. If there is something you would like kept off the table, tell your DM. No reason needed.</p>
   </div>
 </main>
@@ -129,5 +84,6 @@
 <footer class="foot">Set, Inked, and Printed at Emberwood by A. T. Pell &amp; Staff &middot; The Courier Accepts No Liability for Readers Who Ignore Its Advice, and Very Little for Those Who Take It</footer>
 <script src="assets/js/ledger.js"></script>
 <script src="assets/js/site.js"></script>
+<script src="assets/js/polish.js"></script>
 </body>
 </html>

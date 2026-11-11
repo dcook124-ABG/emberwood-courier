@@ -5,7 +5,7 @@
 
   claims:          status can be "Paid", "Open", or "Disputed"
   contracts:       jobs on offer from the firm
-  posted_notices:  notices around the village. The first three appear on the Front Page
+  posted_notices:  notices around the village. The Front Page shows a one-line summary of the latest issue
   rumors:          plain sentences
   risk:            district danger ratings, by name only, e.g. { district: "Old Town", rating: "Severe" }
 */
