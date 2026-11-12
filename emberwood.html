@@ -8,20 +8,20 @@
 <meta name="description" content="The last village on the road to Drakkenheim: where to sleep, drink, spend, and get patched up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Rye&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,400;0,600;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/courier.css">
-<link rel="stylesheet" href="assets/css/frontier.css">
 </head>
 <body data-page="emberwood">
 <a class="skip" href="#main">Skip to the village</a>
 
 <header class="masthead">
   <div class="wrap masthead__top">
-    <div class="masthead__aside">One Copper. Refunds to Next of Kin.</div>
+    <p class="masthead__ear">One Copper. Refunds to Next of Kin.</p>
     <a class="masthead__title" href="index.html">The Emberwood Courier</a>
-    <div class="masthead__aside">Read It, Pass It On, Come Back Alive</div>
+    <p class="masthead__ear masthead__ear--r">Read It, Pass It On, Come Back Alive</p>
+    <p class="issue"><span>Vol. XV</span><span>Emberwood, on Champion's Way</span><span>One Copper</span></p>
   </div>
-  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list" data-nav></ul></nav>
+  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list"><li><a href="index.html">Front Page</a></li><li><a href="why-have-you-come.html">Why Have You Come?</a></li><li><a href="dark-city.html">The Dark City</a></li><li><a href="banners.html">The Five Banners</a></li><li><a href="emberwood.html" aria-current="page">Emberwood</a></li><li><a href="fortune.html">A Fortune in the Rubble</a></li><li><a href="city-that-was.html">The City That Was</a></li><li><a href="wider-world.html">The Wider World</a></li><li><a href="ledger.html">The Ledger</a></li></ul></nav>
 </header>
 
 <div class="street"><canvas data-street role="img" aria-label="The main street of Emberwood at dusk: false-front buildings, lit windows, and a wagon in the mud."></canvas></div>
@@ -33,16 +33,16 @@
     <p class="deck">You walked the last five miles of Champion's Way expecting a graveyard. You're fifteen years early, and the ale's still cold.</p>
     <p class="byline">By Tibbs Mallory, Our Man in the Mud</p>
   </div>
-  <hr class="double-rule">
   <section class="inshort" aria-label="In short"><b>In Short</b><p>Emberwood is the last village on Champion's Way, about five miles south of Drakkenheim, and the only safe place nearby to rest, heal, and resupply. Gear costs double what it does elsewhere, food five times as much, and salvage sells for about half its value. There is no law here but the villagers themselves, and each of the five factions keeps a contact in town.</p></section>
 
-  <div class="story__body" style="margin-top:22px">
+  <div class="story__body">
     <p>Here's Emberwood the way I tell it to anybody buying. Before the Fall it was a market, a pub, and a great many pine trees, and nobody outside the county could have found it with a map and a guide. Then the stars came down on the capital up the road and blew out every window in town. In the years after, the fields went grey, the pines started dying from the top down, and most of the families packed up and left. About two hundred stayed. Mean, stubborn sons of bitches, proud of both, who figured the place was theirs and they'd be damned. Then the adventurers came up the road with coin in their boots, and Emberwood found out what it was for.</p>
     <p>What it's for is this. You go north. You come back, if you're able. And between the going and the coming back, the good people of Emberwood relieve you of every copper you own, cheerful as you please. Half the doors in town are nailed shut. What's worth finding is a short walk from the square. What isn't will find you, usually around last call.</p>
 </div>
 
-    <aside class="aside"><b>Courier Advises:</b> Locals quit learning names after a crew's third trip in. Don't take it personal. Take it as a goal.</aside>
-<h2 class="section-title" style="margin-top:26px;font-size:clamp(28px,3.4vw,38px)">Emberwood at a Glance</h2>
+  <aside class="aside"><b>Courier Advises:</b> Locals quit learning names after a crew's third trip in. Don't take it personal. Take it as a goal.</aside>
+<hr class="break">
+  <h2 id="glance" class="subtitle">Emberwood at a Glance</h2>
   <div class="map-controls">
     <p class="deck">Tap a number to see what's there. Tap them all. It's a small town.</p>
     <button type="button" class="ctl" data-tour aria-pressed="false">Walk with Emma, One Gold</button>
@@ -55,25 +55,38 @@
       <p class="map-caption">Sketch by the Courier. Pines not to scale, and fewer every year.</p>
     </div>
     <div class="map-note-col">
-      <div class="note-wrap" style="--tilt:.5deg">
+      <div class="note-wrap">
         <div class="note place-note" data-note aria-live="polite"></div>
       </div>
     </div>
   </div>
 
-  <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
+  <hr class="break">
 
   <section aria-labelledby="directory">
     <p class="kicker">Where to Find It</p>
-    <h2 id="directory" class="section-title">The Village Directory</h2>
-    <ul class="directory" data-directory data-fold-keep="6" data-fold-label="places"></ul>
+    <h2 id="directory" class="subtitle">The Village Directory</h2>
+    <ul class="directory" data-directory data-fold-keep="6" data-fold-label="places">
+      <li><button type="button" data-id="caravan-court" aria-pressed="false"><span class="directory__num">1</span><span><span class="directory__name">Caravan Court</span><span class="directory__line">The market, round the boarded-up well.</span></span></button></li>
+      <li><button type="button" data-id="red-lion" aria-pressed="false"><span class="directory__num">2</span><span><span class="directory__name">Red Lion Hotel</span><span class="directory__line">The only proper inn, up on the hill.</span></span></button></li>
+      <li><button type="button" data-id="bark-and-buzzard" aria-pressed="false"><span class="directory__num">3</span><span><span class="directory__name">Bark &amp; Buzzard</span><span class="directory__line">Food, drink, gossip, cottages to let.</span></span></button></li>
+      <li><button type="button" data-id="gilded-lily" aria-pressed="false"><span class="directory__num">4</span><span><span class="directory__name">The Gilded Lily</span><span class="directory__line">Spirits from afar and open stage nights.</span></span></button></li>
+      <li><button type="button" data-id="skull-and-sword" aria-pressed="false"><span class="directory__num">5</span><span><span class="directory__name">Skull &amp; Sword Taphouse</span><span class="directory__line">Mind your purse. Mind your mouth.</span></span></button></li>
+      <li><button type="button" data-id="crowe-and-sons" aria-pressed="false"><span class="directory__num">6</span><span><span class="directory__name">Crowe &amp; Sons Smithy</span><span class="directory__line">Repairs, blades, and a red-headed tour guide.</span></span></button></li>
+      <li><button type="button" data-id="chapel" aria-pressed="false"><span class="directory__num">7</span><span><span class="directory__name">Chapel of Saint Ardenna</span><span class="directory__line">The Flame still burns. Healing and prayers.</span></span></button></li>
+      <li><button type="button" data-id="shrine" aria-pressed="false"><span class="directory__num">8</span><span><span class="directory__name">Shrine of the Old Gods</span><span class="directory__line">Standing stones and a herb-smoked hut.</span></span></button></li>
+      <li><button type="button" data-id="old-tithe-house" aria-pressed="false"><span class="directory__num">9</span><span><span class="directory__name">The Old Tithe House</span><span class="directory__line">Harrow &amp; Vane, Underwriters. Listen for the bell.</span></span></button></li>
+      <li><button type="button" data-id="watchtower" aria-pressed="false"><span class="directory__num">10</span><span><span class="directory__name">Lantern Watchtower</span><span class="directory__line">Hooded Lantern scouts keep the road.</span></span></button></li>
+      <li><button type="button" data-id="hendrix-farm" aria-pressed="false"><span class="directory__num">11</span><span><span class="directory__name">Hendrix Farm</span><span class="directory__line">Pilgrims camp here before the last leg.</span></span></button></li>
+      <li><button type="button" data-id="eventide-manor" aria-pressed="false"><span class="directory__num">12</span><span><span class="directory__name">Eventide Manor</span><span class="directory__line">Burned out, south end.</span></span></button></li>
+    </ul>
   </section>
 
-  <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
+  <hr class="break">
 
   <section aria-labelledby="grumbling">
     <p class="kicker">A Word on Prices, Before You Complain</p>
-    <h2 id="grumbling" class="section-title">How Things Work Here</h2>
+    <h2 id="grumbling" class="subtitle">How Things Work Here</h2>
     <div class="grumble">
       <p>Nothing grows here. Not a turnip, not a weed. Every nail, loaf, and bandage in town came up that road on a wagon, and whoever drove it wants paying for the trip and for the nerve. So you'll pay double what you paid at home for steel and kit, and five times over for anything you mean to eat. Water goes by the cup, same as ale, and the ale's better. Go on and haggle. The shopkeep will tell you to take your business elsewhere, then lean on the counter and enjoy your face while you work out there isn't any elsewhere. Best entertainment in town, after the Lily.</p>
       <p>Going the other way, your salvage and your gems and that painting you cut out of a dead man's parlor will fetch about half of what you've been telling everybody at the bar. Take the money. It only cost you the friends.</p>
@@ -81,11 +94,11 @@
 </div>
   </section>
 
-  <div class="gem-rule" aria-hidden="true"><svg viewBox="0 0 24 36"><path fill="#6f42ab" stroke="#241d2e" stroke-width="1.6" d="M12 1l10 8-2.5 25h-15L2 9z"/><path fill="none" stroke="#c9a2ff" d="M12 1v33M2 9l10 5 10-5"/></svg></div>
+  <hr class="break">
 
   <section aria-labelledby="notices">
     <p class="kicker">Paid Announcements</p>
-    <h2 id="notices" class="section-title">Notices &amp; Advertisements</h2>
+    <h2 id="notices" class="subtitle">Notices &amp; Advertisements</h2>
     <p class="deck">The Courier vouches for none of them, and has been paid by all of them.</p>
     <div class="notices" data-fold-keep="4" data-fold-label="notices">
       <article class="notice"><h3>The Bark &amp; Buzzard</h3><b class="tagline">Hot Stew. Honest Ale. Nobody Here Will Rob You.</b><p>The only house in Emberwood that can print that last line without the Courier's lawyer clearing his throat. Lamb stew nightly. Cottages to let by the week, cheap, and in fine condition, all things considered. Kick the can out back at your own risk.</p><small>Holger &amp; Karin Alsberg, Proprietors</small></article>
@@ -101,12 +114,12 @@
       <article class="notice notice--classified"><h3>Classified</h3><p><b>Wanted:</b> Fifth member for experienced crew. Previous fifth member no longer looking.</p><p><b>For Sale:</b> Chain shirt, one careful owner, gently holed. Inquire at the Skull &amp; Sword.</p><p><b>Personal:</b> To whoever took my gloves off the bench at the Bark &amp; Buzzard on Tuesday last. Keep them. I know what they touched. You don't.</p><p><b>Lost:</b> Halfling, answers to Pip. If found, please return. If partly found, please return what you can.</p></article>
     </div>
   </section>
+  <nav class="road-next" aria-label="Next page"><span class="road-next__tag">Up the Road</span><a href="fortune.html">A Fortune in the Rubble</a><span class="deck">What the stones will fetch, who's buying, and what they leave out.</span></nav>
 </main>
 
 <footer class="foot">Set, Inked, and Printed at Emberwood by A. T. Pell &amp; Staff &middot; The Courier Accepts No Liability for Readers Who Ignore Its Advice, and Very Little for Those Who Take It</footer>
 <noscript><p class="wrap">The village map needs JavaScript to draw itself.</p></noscript>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/emberwood.js"></script>
-<script src="assets/js/polish.js"></script>
 </body>
 </html>

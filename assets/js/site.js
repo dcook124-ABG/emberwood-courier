@@ -1,25 +1,11 @@
-/* Shared page behaviour: navigation, section listings, Ledger preview, Haze motes */
+/* Shared behaviour for every page: the header, folds, cards that turn over, reading time,
+   the "On this page" strip, read stamps, Overheard in Camp, and the pop-up definitions.
+
+   Everything here waits until the page and its other scripts have finished, so the order
+   of the script tags does not matter. Every page still reads without this file. */
 (function () {
-  // Set ready: true as each section is built. Navigation and listings update themselves.
-  var SECTIONS = [
-    { id: "home", file: "index.html", name: "Front Page", ready: true, nav: true },
-    { id: "emberwood", file: "emberwood.html", name: "Emberwood", ready: true, nav: true, layer: "essential",
-      deck: "Where to sleep, where to drink, and who'll stitch you shut after.", step: "Learn where the beds are, and which smiles to walk past." },
-    { id: "dark-city", file: "dark-city.html", name: "The Dark City", ready: true, nav: true, layer: "essential",
-      deck: "A drowned city of colored fog and humming stone, and the five rules that keep you breathing in it.", step: "See what's waiting past the covered bridge." },
-    { id: "banners", file: "banners.html", name: "The Five Banners", ready: true, nav: true, layer: "essential",
-      deck: "Five powers, one dead city, and not one of them with bodies to spare.", step: "Meet the people about to offer you work, and what it'll cost you." },
-    { id: "fortune", file: "fortune.html", name: "A Fortune in the Rubble", ready: true, nav: true, layer: "essential",
-      deck: "What the stones will fetch, who's buying, and what they leave out.", step: null },
-    { id: "why", file: "why-have-you-come.html", name: "Why Have You Come?", ready: true, nav: true, layer: "essential",
-      deck: "Who you were before the road got its hooks in you.", step: "Decide who your character is, and what dragged them here." },
-    { id: "ledger", file: "ledger.html", name: "The Ledger", ready: true, nav: true, layer: "essential",
-      deck: "Who died this week, who's missing, and who's paying to find out.", step: null },
-    { id: "history", file: "city-that-was.html", name: "The City That Was", ready: true, nav: false, layer: "archive",
-      deck: "The night the stars fell, the war that came after, and five royals nobody can find." },
-    { id: "world", file: "wider-world.html", name: "The Wider World", ready: true, nav: false, layer: "archive",
-      deck: "The kingdoms past the pines, the light they pray to, and why a child who sparks gets sent away." }
-  ];
+  var root = document.documentElement;
+  root.classList.add("js");
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -27,74 +13,9 @@
     if (text != null) n.textContent = text;
     return n;
   }
-
-  function buildNav() {
-    var host = document.querySelector("[data-nav]");
-    if (!host) return;
-    var here = document.body.getAttribute("data-page");
-    SECTIONS.filter(function (s) { return s.nav; }).forEach(function (s) {
-      var li = el("li");
-      if (s.ready) {
-        var a = el("a", null, s.name);
-        a.href = s.file;
-        if (s.id === here) a.setAttribute("aria-current", "page");
-        li.appendChild(a);
-      } else {
-        var span = el("span", null, s.name);
-        span.title = "In press";
-        li.appendChild(span);
-      }
-      host.appendChild(li);
-    });
-  }
-
-  function buildHeadlines() {
-    document.querySelectorAll("[data-headlines]").forEach(function (host) {
-      var layer = host.getAttribute("data-headlines");
-      SECTIONS.filter(function (s) { return s.layer === layer; }).forEach(function (s) {
-        var item = el("article", "headline");
-        var title = el("h3", "headline__title");
-        if (s.ready) {
-          var a = el("a", null, s.name);
-          a.href = s.file;
-          title.appendChild(a);
-        } else {
-          title.textContent = s.name;
-        }
-        item.appendChild(title);
-        var deck = el("p", null, s.deck + " ");
-        if (!s.ready) deck.appendChild(el("span", "in-press", "In press"));
-        item.appendChild(deck);
-        host.appendChild(item);
-      });
-    });
-  }
-
-  function buildPath() {
-    var host = document.querySelector("[data-path]");
-    if (!host) return;
-    SECTIONS.filter(function (s) { return s.step; }).forEach(function (s) {
-      var li = el("li");
-      var label;
-      if (s.ready) {
-        label = el("a", "path__label link", s.name);
-        label.href = s.file;
-      } else {
-        label = el("span", "path__label path__label--plain", s.name);
-      }
-      li.appendChild(label);
-      if (!s.ready) { li.appendChild(document.createTextNode(" ")); li.appendChild(el("span", "in-press", "In press")); }
-      if (readList().indexOf(s.id) >= 0) li.appendChild(el("span", "path__stamp", "Read"));
-      li.appendChild(el("span", "path__hint", s.step));
-      host.appendChild(li);
-    });
-    var last = el("li");
-    last.appendChild(el("span", "path__label path__label--plain", "Report to the Old Tithe House"));
-    last.appendChild(el("span", "path__hint", "Harrow & Vane hold orientation for every new hire before a first case. Bring your own boots. The firm stopped lending boots. They kept not coming back."));
-    host.appendChild(last);
-    var steps = SECTIONS.filter(function (s) { return s.step; });
-    var done = steps.filter(function (s) { return readList().indexOf(s.id) >= 0; }).length;
-    if (done) host.parentNode.appendChild(el("p", "path__tally", done === steps.length ? "All read. You now know more than half the dead did." : done + " of " + steps.length + " read. Keep walking. The road isn't getting any shorter."));
+  function ready(fn) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
   }
 
   /* Remembers, in this browser only, which sections a reader has finished */
@@ -108,29 +29,164 @@
     try { localStorage.setItem("courier-read", JSON.stringify(list)); } catch (e) { /* private window */ }
   }
 
-  /* Up the road: where to go next */
-  function buildRoadNext() {
-    var main = document.querySelector("main");
-    var here = document.body.getAttribute("data-page");
-    if (!main || here === "home") return;
-    var order = SECTIONS.filter(function (s) { return s.id !== "home"; });
-    var i = order.map(function (s) { return s.id; }).indexOf(here);
-    var next = order[i + 1] || SECTIONS[0];
-    var box = el("div", "road-next wrap");
-    box.appendChild(el("span", "road-next__tag", order[i + 1] ? "Up the Road" : "Back to the Start"));
-    var a = el("a", null, next.name);
-    a.href = next.file;
-    box.appendChild(a);
-    if (next.deck) box.appendChild(el("span", "deck", next.deck));
-    main.appendChild(box);
-    function check() {
-      if (box.getBoundingClientRect().top < window.innerHeight) {
-        markRead(here);
-        window.removeEventListener("scroll", check);
+  /* Header: stays reachable, and slims down once the reader scrolls */
+  function initHeader(header) {
+    function setHead() { root.style.setProperty("--head-h", header.offsetHeight + "px"); }
+    window.addEventListener("scroll", function () {
+      var y = window.scrollY, compact = header.classList.contains("is-compact");
+      if (!compact && y > 140) { header.classList.add("is-compact"); setHead(); }
+      else if (compact && y < 20) { header.classList.remove("is-compact"); setHead(); }
+    }, { passive: true });
+    window.addEventListener("resize", setHead);
+    setHead();
+    // On phones the menu scrolls sideways; bring the current page into view
+    var current = header.querySelector(".nav a[aria-current]");
+    var list = current && current.closest(".nav__list");
+    if (list && list.scrollWidth > list.clientWidth) list.scrollLeft = Math.max(0, current.offsetLeft - 24);
+  }
+
+  /* Folds: show the essentials, keep the rest a tap away */
+  function initFolds() {
+    function foldButton(container, onToggle) {
+      var b = el("button", "fold-btn");
+      b.type = "button";
+      b.setAttribute("aria-expanded", "false");
+      b.appendChild(el("span"));
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") !== "true";
+        b.setAttribute("aria-expanded", open ? "true" : "false");
+        onToggle(open, b);
+      });
+      container.parentNode.insertBefore(b, container.nextSibling);
+      onToggle(false, b);
+    }
+    document.querySelectorAll("[data-fold-keep]").forEach(function (box) {
+      var keep = parseInt(box.getAttribute("data-fold-keep"), 10);
+      var items = Array.prototype.slice.call(box.children);
+      if (items.length <= keep + 1) return;
+      var noun = box.getAttribute("data-fold-label") || "entries";
+      foldButton(box, function (open, b) {
+        items.forEach(function (it, i) { it.hidden = !open && i >= keep; });
+        b.firstChild.textContent = open ? "Show fewer" : "Show all " + items.length + " " + noun;
+      });
+    });
+    document.querySelectorAll("[data-fold-prose]").forEach(function (box) {
+      var paras = box.querySelectorAll(":scope > p");
+      if (paras.length < 2) return;
+      foldButton(box, function (open, b) {
+        for (var i = 1; i < paras.length; i++) paras[i].hidden = !open;
+        box.classList.toggle("is-folded", !open);
+        b.firstChild.textContent = open ? "Show less" : "Read the rest";
+      });
+    });
+  }
+
+  /* Cards that turn over. The hidden face is kept away from keyboards and screen readers. */
+  function initFlips() {
+    function setFaces(card) {
+      var turned = card.classList.contains("is-turned");
+      [[card.querySelector(".flip__front"), turned], [card.querySelector(".flip__back"), !turned]].forEach(function (pair) {
+        if (!pair[0]) return;
+        pair[0].inert = pair[1];
+        if (pair[1]) pair[0].setAttribute("aria-hidden", "true"); else pair[0].removeAttribute("aria-hidden");
+      });
+    }
+    document.querySelectorAll(".flip").forEach(setFaces);
+    document.addEventListener("click", function (e) {
+      var card = e.target.closest && e.target.closest(".flip");
+      if (!card) return;
+      var turned = card.classList.toggle("is-turned");
+      setFaces(card);
+      if (e.target.closest(".flip__btn")) {
+        var next = card.querySelector(turned ? ".flip__back .flip__btn" : ".flip__front .flip__btn");
+        if (next) next.focus({ preventScroll: true });
       }
+    });
+  }
+
+  /* Reading time counts every word on the page, shown or folded away */
+  function countWords(node) { return (node.textContent || "").split(/\s+/).filter(Boolean).length; }
+  function initReadingTime(main) {
+    var head = main.querySelector(".page-head");
+    if (!head) return;
+    var words = countWords(main) + (parseInt(document.body.getAttribute("data-extra-words"), 10) || 0);
+    main.querySelectorAll("script, style, svg, select, .road-next").forEach(function (n) { words -= countWords(n); });
+    var time = el("span", "time", Math.max(1, Math.round(words / 230)) + " min read");
+    var byline = head.querySelector(".byline");
+    if (byline) byline.parentNode.insertBefore(time, byline.nextSibling);
+    else head.appendChild(time);
+  }
+
+  /* On this page: jump links to each section, on pages with more than one */
+  function initStrip(main, header) {
+    var head = main.querySelector(".page-head");
+    var heads = Array.prototype.filter.call(main.querySelectorAll("h2"), function (h) {
+      return !h.closest(".flip, .notice, .note, .start") && h.offsetParent !== null;
+    });
+    if (!head || heads.length < 2) return;
+    var strip = el("nav", "onpage");
+    strip.setAttribute("aria-label", "On this page");
+    var inner = el("div", "onpage__inner wrap");
+    var links = heads.map(function (h) {
+      if (!h.id) h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      var a = el("a", "onpage__link", h.textContent.replace(/\s+/g, " ").trim());
+      a.href = "#" + h.id;
+      inner.appendChild(a);
+      return [a, h];
+    });
+    strip.appendChild(inner);
+    head.parentNode.insertBefore(strip, head.nextSibling);
+    function mark() {
+      var line = header.offsetHeight + strip.offsetHeight + 40, active = null;
+      links.forEach(function (pair) { if (pair[1].getBoundingClientRect().top < line) active = pair; });
+      links.forEach(function (pair) {
+        var on = pair === active, a = pair[0];
+        a.classList.toggle("is-current", on);
+        if (on && inner.scrollWidth > inner.clientWidth && (a.offsetLeft < inner.scrollLeft || a.offsetLeft + a.offsetWidth > inner.scrollLeft + inner.clientWidth)) inner.scrollLeft = a.offsetLeft - 60;
+      });
+    }
+    window.addEventListener("scroll", mark, { passive: true });
+    mark();
+  }
+
+  /* Front Page: the latest Ledger in one line. The box stays hidden if the Ledger file is missing or broken. */
+  function initLedgerLine() {
+    var line = document.querySelector("[data-ledger-line]");
+    var data = window.COURIER_LEDGER;
+    if (!line || !data || !data.length) return;
+    var latest = data[0];
+    var open = latest.claims.filter(function (c) { return c.status === "Open"; }).length;
+    line.textContent = "No. " + latest.issue + ", posted " + latest.posted + ". " + latest.bell + " " +
+      latest.claims.length + " claims, " + open + " still open, " + latest.posted_notices.length + " notices about town.";
+    var box = line.closest("[data-ledger-box]");
+    if (box) box.hidden = false;
+  }
+
+  /* Front Page: stamp the steps this reader has finished */
+  function initStamps() {
+    var host = document.querySelector("[data-path]");
+    if (!host) return;
+    var steps = host.querySelectorAll("li[data-id]"), read = readList(), done = 0;
+    steps.forEach(function (li) {
+      if (read.indexOf(li.getAttribute("data-id")) < 0) return;
+      done++;
+      li.insertBefore(el("span", "path__stamp", "Read"), li.querySelector(".hint"));
+    });
+    if (done) host.parentNode.appendChild(el("p", "path__tally", done === steps.length ? "All read. You now know more than half the dead did." : done + " of " + steps.length + " read. Keep walking. The road isn't getting any shorter."));
+  }
+
+  /* A page counts as read once the reader reaches the link to the next one */
+  function initRoadNext(here) {
+    var box = document.querySelector(".road-next");
+    if (!box) return;
+    function check() {
+      if (box.getBoundingClientRect().top >= window.innerHeight) return;
+      markRead(here);
+      window.removeEventListener("scroll", check);
     }
     window.addEventListener("scroll", check, { passive: true });
     window.addEventListener("load", check);
+    check();
   }
 
   /* Overheard around camp */
@@ -156,16 +212,14 @@
     ["I don't drink with the Tithe House clerks. They know my odds, and they're too polite to say.", "A sellsword, the Skull & Sword"],
     ["Madam Rochelle says I sing like an angel. Didn't say which direction the angel was headed.", "A performer, the Gilded Lily"]
   ];
-  function buildOverheard() {
-    var main = document.querySelector("main");
-    if (!main) return;
+  function initOverheard(main) {
     var q = OVERHEARD[Math.floor(Math.random() * OVERHEARD.length)];
-    var box = el("aside", "overheard wrap");
+    var box = el("aside", "overheard");
     box.appendChild(el("p", "overheard__tag", "Overheard in Camp"));
     var p = el("p", null, "“" + q[0] + "”");
     p.appendChild(el("cite", null, q[1]));
     box.appendChild(p);
-    main.appendChild(box);
+    main.insertBefore(box, main.querySelector(":scope > .road-next"));
   }
 
   /* A stranger's lexicon: tap a dotted word for a plain definition */
@@ -182,10 +236,8 @@
     ["Reeve", "The Reeve", "The crown's officer over a village. Emberwood's has no crown left to answer to and hasn't let that slow him down."],
     ["Inner City", "The Inner City", "Everything inside Drakkenheim's walls. You go in by the gates. The walls have opinions about the alternative."]
   ];
-  function buildLexicon() {
-    var root = document.querySelector("main");
-    if (!root) return;
-    var skip = /^(A|BUTTON|H1|H2|H3|CITE|TEXTAREA|SELECT|OPTION|LABEL|SCRIPT|B|STRONG)$/;
+  function initLexicon(main) {
+    var skipTag = /^(A|BUTTON|H1|H2|H3|CITE|TEXTAREA|SELECT|OPTION|LABEL|SCRIPT)$/;
     var popup = null;
     function close() { if (popup) { popup.remove(); popup = null; } }
     function open(btn, entry) {
@@ -199,122 +251,52 @@
       popup.style.left = Math.max(12, Math.min(innerWidth - w - 12, r.left + r.width / 2 - w / 2)) + "px";
       popup.style.top = (r.top - h - 8 > 8 ? r.top - h - 8 : r.bottom + 8) + "px";
     }
-    function apply(container) {
-      LEXICON.forEach(function (entry) {
-        if (container.querySelector('[data-term="' + entry[1] + '"]')) return;
-        var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
-          acceptNode: function (n) {
-            for (var p = n.parentElement; p && p !== container.parentElement; p = p.parentElement) {
-              if (skip.test(p.tagName) || p.classList.contains("flip") || p.classList.contains("note--ad")) return NodeFilter.FILTER_REJECT;
-            }
-            return NodeFilter.FILTER_ACCEPT;
-          }
-        });
-        var re = new RegExp("\\b" + entry[0] + "\\b"), node;
-        while ((node = walker.nextNode())) {
-          var m = re.exec(node.nodeValue);
-          if (!m) continue;
-          var after = node.splitText(m.index);
-          after.nodeValue = after.nodeValue.slice(m[0].length);
-          var btn = el("button", "term", m[0]);
-          btn.type = "button";
-          btn.setAttribute("data-term", entry[1]);
-          btn.addEventListener("click", function (e) { e.stopPropagation(); open(btn, entry); });
-          after.parentNode.insertBefore(btn, after);
-          break;
-        }
-      });
+    function skipped(node) {
+      for (var p = node.parentElement; p && p !== main.parentElement; p = p.parentElement) {
+        if (skipTag.test(p.tagName)) return true;
+        // Bold words are labels, except inside a story, where they are part of the sentence
+        if ((p.tagName === "B" || p.tagName === "STRONG") && !p.closest(".story__body")) return true;
+        if (p.matches(".flip, .start, .advisory, .onpage, .road-next")) return true;
+      }
+      return false;
     }
-    apply(root);
+    LEXICON.forEach(function (entry) {
+      if (main.querySelector('[data-term="' + entry[1] + '"]')) return;
+      var walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (n) { return skipped(n) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
+      });
+      var re = new RegExp("\\b" + entry[0] + "\\b"), node;
+      while ((node = walker.nextNode())) {
+        var m = re.exec(node.nodeValue);
+        if (!m) continue;
+        var after = node.splitText(m.index);
+        after.nodeValue = after.nodeValue.slice(m[0].length);
+        var btn = el("button", "term", m[0]);
+        btn.type = "button";
+        btn.setAttribute("data-term", entry[1]);
+        btn.addEventListener("click", function (e) { e.stopPropagation(); open(btn, entry); });
+        after.parentNode.insertBefore(btn, after);
+        break;
+      }
+    });
     document.addEventListener("click", close);
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
     window.addEventListener("scroll", close, { passive: true });
   }
 
-  function buildLedgerPreview() {
-    var data = window.COURIER_LEDGER;
-    var claimsHost = document.querySelector("[data-claims]");
-    if (!data || !data.length || !claimsHost) return;
-    var latest = data[0];
-    document.querySelector("[data-bell]").textContent = "Rung from the Old Tithe House for every claim paid. The whole camp stops talking to count. " + latest.bell;
-    latest.claims.forEach(function (c) {
-      var li = el("li", "claim");
-      li.appendChild(el("b", null, c.name));
-      li.appendChild(document.createTextNode(", " + c.text + " "));
-      li.appendChild(el("span", "status status--" + c.status.toLowerCase(), c.status));
-      claimsHost.appendChild(li);
-    });
-    var postedHost = document.querySelector("[data-posted]");
-    latest.posted_notices.slice(0, 3).forEach(function (p) {
-      var li = el("li", "claim");
-      li.appendChild(el("b", null, p.where + ". "));
-      li.appendChild(document.createTextNode(p.text));
-      postedHost.appendChild(li);
-    });
-    document.querySelector("[data-issue]").textContent = "Ledger No. " + latest.issue + ", posted " + latest.posted + ".";
-  }
-
-  function hazeMotes() {
-    var canvas = document.querySelector("[data-motes]");
-    if (!canvas) return;
-    var ctx = canvas.getContext("2d");
-    var colors = ["#c9a2ff", "#72d3c6", "#e6b873", "#e38ac4", "#f4ecdb"];
-    var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var motes = [], w = 0, h = 0, frame;
-
-    function resize() {
-      var ratio = Math.min(window.devicePixelRatio || 1, 2);
-      w = canvas.clientWidth; h = canvas.clientHeight;
-      canvas.width = w * ratio; canvas.height = h * ratio;
-      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-      var count = Math.round(Math.min(150, w / 9));
-      motes = [];
-      for (var i = 0; i < count; i++) {
-        motes.push({
-          x: Math.random() * w, y: Math.random() * h,
-          r: Math.random() * 1.7 + .4, c: colors[i % colors.length],
-          dx: (Math.random() - .5) * .16, dy: -Math.random() * .1 - .02,
-          phase: Math.random() * 6.28, speed: Math.random() * .012 + .004
-        });
-      }
-    }
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      motes.forEach(function (m) {
-        m.phase += m.speed;
-        ctx.globalAlpha = .28 + (Math.sin(m.phase) + 1) * .3;
-        ctx.fillStyle = m.c;
-        ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, 6.28); ctx.fill();
-      });
-    }
-    function step() {
-      motes.forEach(function (m) {
-        m.x += m.dx; m.y += m.dy;
-        if (m.y < -5) m.y = h + 5;
-        if (m.x < -5) m.x = w + 5;
-        if (m.x > w + 5) m.x = -5;
-      });
-      draw();
-      frame = requestAnimationFrame(step);
-    }
-    resize(); draw();
-    if (!calm) frame = requestAnimationFrame(step);
-    window.addEventListener("resize", function () { resize(); draw(); });
-    document.addEventListener("visibilitychange", function () {
-      if (calm) return;
-      cancelAnimationFrame(frame);
-      if (!document.hidden) frame = requestAnimationFrame(step);
-    });
-  }
-
-  window.COURIER_SECTIONS = SECTIONS;
-  buildNav();
-  buildHeadlines();
-  buildPath();
-  buildLedgerPreview();
-  hazeMotes();
-  window.COURIER_AFTER_RENDER = function () { buildLexicon(); };
-  buildOverheard();
-  buildRoadNext();
-  if (!document.querySelector("[data-defer-lexicon]")) buildLexicon();
+  ready(function () {
+    var header = document.querySelector(".masthead");
+    var main = document.querySelector("main");
+    if (!header || !main) return;
+    initHeader(header);
+    initReadingTime(main);
+    initFolds();
+    initFlips();
+    initStrip(main, header);
+    initLedgerLine();
+    initStamps();
+    initOverheard(main);
+    initRoadNext(document.body.getAttribute("data-page"));
+    initLexicon(main);
+  });
 })();

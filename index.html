@@ -8,82 +8,88 @@
 <meta name="description" content="A primer for the newly arrived in Emberwood, on the road to Drakkenheim.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Rye&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,400;0,600;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/courier.css">
-<link rel="stylesheet" href="assets/css/frontier.css">
 </head>
 <body data-page="home">
 <a class="skip" href="#main">Skip to the news</a>
 
 <header class="masthead">
   <div class="wrap masthead__top">
-    <div class="masthead__aside">One Copper. Refunds to Next of Kin.</div>
+    <p class="masthead__ear">One Copper. Refunds to Next of Kin.</p>
     <a class="masthead__title" href="index.html">The Emberwood Courier</a>
-    <div class="masthead__aside">Read It, Pass It On, Come Back Alive</div>
+    <p class="masthead__ear masthead__ear--r">Read It, Pass It On, Come Back Alive</p>
+    <p class="issue"><span>Vol. XV</span><span>Emberwood, on Champion's Way</span><span>One Copper</span></p>
   </div>
-  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list" data-nav></ul></nav>
+  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list"><li><a href="index.html" aria-current="page">Front Page</a></li><li><a href="why-have-you-come.html">Why Have You Come?</a></li><li><a href="dark-city.html">The Dark City</a></li><li><a href="banners.html">The Five Banners</a></li><li><a href="emberwood.html">Emberwood</a></li><li><a href="fortune.html">A Fortune in the Rubble</a></li><li><a href="city-that-was.html">The City That Was</a></li><li><a href="wider-world.html">The Wider World</a></li><li><a href="ledger.html">The Ledger</a></li></ul></nav>
 </header>
 
 <section class="hero">
-  <canvas class="hero__motes" data-motes aria-hidden="true"></canvas>
-  <svg class="hero__skyline" viewBox="0 0 1440 330" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <defs><filter id="ink-h" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter></defs>
-    <g filter="url(#ink-h)">
-      <path fill="#2c2050" d="M0 330V236l34-14 18 16 22-44 14 50 40-12 26 18 18-64 20 58 34-8 28 20 26-36 16 28 44-10 20-70 22 72 40 6 24-26 26 30 30-44 16 40 38-6 26 22 20-84 22 80 40-10 26 24 28-36 18 30 40-8 24-64 22 66 38 2 26-28 26 32 34-40 18 36 40-6 22-58 22 56 44 10 22-24 26 24 26-40 18 42 34-8 30 16 24-50 20 52 36-14 22-30 24 34 40-6 30-20 28 24 34-10 36 14V330Z"/>
-      <path fill="#191233" d="M0 330V284l46-16 18 14 30-24 24 26 46-8 16-42 16 44 52 4 28-22 26 24 52-10 20 16 36-26 20 28 44-4 18-46 18 46 50 6 30-26 28 24 40-8 22 18 34-24 24 26 48-6 18-52 20 54 42 2 30-22 24 22 46-12 22 20 40-18 24 20 44-2 30 14 40-22 26 24 44-14 20-40 20 42 46-6 30-22 28 24 44-10 36 12V330Z"/>
-      <path fill="#191233" d="M1090 336v-168l-13 7 17-54 11 38 14-4v-84l-16 8 26-74 26 74-16-8v62l26-8v-34l-12 6 24-60 24 60-12-6v44l20 6 10-36 12 42v-16l-10 5 18-48 18 48-10-5v190Z"/>
-    </g>
-    <g fill="#e6b873" opacity=".8"><rect x="1143" y="150" width="7" height="12"/><rect x="1188" y="176" width="6" height="11"/><rect x="1241" y="196" width="6" height="11"/></g>
-  </svg>
-  <svg class="hero__tear" viewBox="0 0 1440 34" preserveAspectRatio="none" aria-hidden="true"><path fill="#e8ddc5" d="M0 34V19l34 9 26-18 30 16 42-13 22 12 40-21 34 22 46-8 26 11 44-20 26 15 48-9 22 13 40-16 34 16 50-14 22 12 44-10 30 15 38-22 30 17 44-8 24 11 42-19 34 18 42-9 26 11 40-17 30 16 28-9 40-12 34 14 44-10 30 15 38-20 30 16 44-8 26 11 42-18 34 17 42-9 26 11 40-16 30 16 40-10 34 12 44-14 30 13V34Z"/></svg>
-  <div class="hero__inner">
-    <p class="kicker-light">A Primer for the Newly Arrived</p>
-    <h1>Welcome to Drakkenheim</h1>
-    <p class="hero__deck">The city is dead. The money isn't. Everything a fresh face on Champion's Way ought to hear before the gate, from people who'd like you back in time for next week's edition.</p>
+  <div class="hero__text">
+    <p class="hero__kicker">A Primer for the Newly Arrived</p>
+    <h1 class="hero__title"><span class="l1">Welcome to</span> <span class="l2">Drakkenheim</span></h1>
+    <p class="hero__deck"><span class="d1">The city is dead.</span> <span class="d2">The money isn't.</span> <span class="d3">Everything a fresh face on Champion's Way ought to hear before the gate, from people who'd like you back in time for next week's edition.</span></p>
+  </div>
+  <div class="hero__sky" aria-hidden="true">
+    <svg viewBox="0 0 1440 330" preserveAspectRatio="xMaxYMax slice" focusable="false">
+<defs><filter id="ink-h" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter></defs>
+<g filter="url(#ink-h)">
+<path class="sk-far" d="M0 330V236l34-14 18 16 22-44 14 50 40-12 26 18 18-64 20 58 34-8 28 20 26-36 16 28 44-10 20-70 22 72 40 6 24-26 26 30 30-44 16 40 38-6 26 22 20-84 22 80 40-10 26 24 28-36 18 30 40-8 24-64 22 66 38 2 26-28 26 32 34-40 18 36 40-6 22-58 22 56 44 10 22-24 26 24 26-40 18 42 34-8 30 16 24-50 20 52 36-14 22-30 24 34 40-6 30-20 28 24 34-10 36 14V330Z"/>
+<path class="sk-near" d="M0 330V284l46-16 18 14 30-24 24 26 46-8 16-42 16 44 52 4 28-22 26 24 52-10 20 16 36-26 20 28 44-4 18-46 18 46 50 6 30-26 28 24 40-8 22 18 34-24 24 26 48-6 18-52 20 54 42 2 30-22 24 22 46-12 22 20 40-18 24 20 44-2 30 14 40-22 26 24 44-14 20-40 20 42 46-6 30-22 28 24 44-10 36 12V330Z"/>
+<path class="sk-near" d="M1090 336v-168l-13 7 17-54 11 38 14-4v-84l-16 8 26-74 26 74-16-8v62l26-8v-34l-12 6 24-60 24 60-12-6v44l20 6 10-36 12 42v-16l-10 5 18-48 18 48-10-5v190Z"/>
+</g>
+<g class="sk-win"><rect x="1143" y="150" width="7" height="12"/><rect x="1188" y="176" width="6" height="11"/><rect x="1241" y="196" width="6" height="11"/></g>
+    </svg>
   </div>
 </section>
 
-<main id="main" class="wrap">
-  <div class="front">
-    <div class="front__grid">
-      <article id="big-picture">
-        <p class="kicker">From the Editor's Desk</p>
-        <h2 class="section-title">The Big Picture</h2>
-        <p class="deck">All you need to know before your first drink, and more than you'll remember after your third.</p>
-        <p class="byline">By Ambrose T. Pell, Editor &amp; Proprietor</p>
-        <div class="story__body">
-          <p>Welcome, stranger, to the edge of the grandest ruin in the known world. For a hundred and fifty years House von Kessel ruled the kingdom of Westem&auml;r from the city you can see glittering past the pines, and ruled it in comfort. Then, at thirteen minutes past eight on the evening of the sixteenth of September, 1111, the sky split open and rained stars on Drakkenheim. The king, the queen, and every one of their children were home that night. Not one of them has been seen since, alive or otherwise.</p>
-          <p>What came next, any barfly could have called. The king's brother and sister fell to quarreling over his empty chair, then to raising armies over it, and spent five years bleeding the kingdom white. Both were dead by 1119, and neither ever sat down. Westem&auml;r is still a kingdom the way a dropped plate is still a plate, and its capital belongs to whoever can hold a street of it until supper.</p>
-          <p>But you didn't walk all this way for a history lesson. (The Courier keeps one on hand in the Archive pages anyway, and recommends it warmly.) You came for what the stars left behind. There is a mist up there called the Haze, every color you have a name for and a few you don't, and in fifteen years it has not lifted once. There is a crystal called <strong>delerium</strong> pushing up through the cobbles like frost through a field, humming to itself, and a stone the size of your fist will buy you a farm. Handle it wrong and it will buy you a funeral. Linger too long in that mist and you'll come back changed, if you come back as anything your mother would claim.</p>
-          <p>Five great outfits have come to settle what the corpse is for. They will not agree this side of Judgment, and every one of them is desperate for hands it can afford to lose. That, dear reader, is where you come in. Emberwood, last stop on the road, will sell all of you your boots and your beer and your bandages at prices that'll make you weep, and the Courier will be right here writing it all down. Read on. Come back. Buy next week's.</p>
-        </div>
-                <aside class="aside"><b>Editor's Aside: On Our Price.</b> The Courier costs one copper, which makes it the cheapest thing in Emberwood and very possibly the most useful. If you're reading a borrowed copy, the Editor forgives you. The last owner is unlikely to want it back.</aside>
-<p class="pull">“Know your way out before you go in. Retreat is a plan. Running blind is a funeral.”<cite>The Rules of the Road</cite></p>
-      </article>
+<main id="main" class="wrap front">
 
-      <aside class="note-wrap" style="--tilt:.7deg" aria-labelledby="new-here">
-        <div class="note">
-          <h2 id="new-here">Where to Start</h2>
-          <ol class="path__list" data-path>
-            <li><a class="path__label link" href="#big-picture">The Big Picture</a><span class="path__hint">One minute, and you'll know what happened.</span></li>
-          </ol>
-          <p class="path__also" data-also></p>
-        </div>
-      </aside>
-    </div>
+  <section class="start" aria-labelledby="start-h">
+    <h2 id="start-h">Where to Start</h2>
+    <ol class="start__list" data-path>
+      <li><a href="#big-picture">The Big Picture</a> <span class="time">On this page</span><span class="hint">One minute, and you'll know what happened.</span></li>
+      <li data-id="why"><a href="why-have-you-come.html">Why Have You Come?</a> <span class="time">3 min</span><span class="hint">Decide who your character is, and what dragged them here.</span></li>
+      <li data-id="dark-city"><a href="dark-city.html">The Dark City</a> <span class="time">3 min</span><span class="hint">See what's waiting past the covered bridge.</span></li>
+      <li data-id="banners"><a href="banners.html">The Five Banners</a> <span class="time">5 min</span><span class="hint">Meet the people about to offer you work, and what it'll cost you.</span></li>
+      <li data-id="emberwood"><a href="emberwood.html">Emberwood</a> <span class="time">11 min</span><span class="hint">Learn where the beds are, and which smiles to walk past.</span></li>
+    </ol>
+    <p class="start__also"><b>Also in this paper:</b> <a href="fortune.html">A Fortune in the Rubble</a> &middot; <a href="ledger.html">The Ledger</a> &middot; <a href="city-that-was.html">The City That Was</a> &middot; <a href="wider-world.html">The Wider World</a></p>
+  </section>
 
-    <div class="ledger-line">
-      <span class="ledger-line__tag">The Latest Ledger</span>
-      <span data-ledger-line></span>
-      <a class="link" href="ledger.html">Read the full Ledger</a>
+  <p class="advisory"><strong>Before you read on. (This part is out of character.)</strong> This is a dark fantasy game. Expect violence and gore, foul language, cannibalism, body horror and madness, monsters of every kind including rats and spiders, disaster and war, and religious zealotry. If there is something you would like kept off the table, tell your DM. No reason needed.</p>
+
+  <hr class="break">
+
+  <article class="story" id="big-picture">
+    <header class="story__head">
+      <p class="kicker">From the Editor's Desk</p>
+      <h2 class="section-title">The Big Picture</h2>
+      <p class="deck">All you need to know before your first drink, and more than you'll remember after your third.</p>
+      <p class="byline">By Ambrose T. Pell, Editor &amp; Proprietor</p>
+    </header>
+    <div class="story__body">
+      <p>Welcome, stranger, to the edge of the grandest ruin in the known world. For a hundred and fifty years House von Kessel ruled the kingdom of Westem&auml;r from the city you can see glittering past the pines, and ruled it in comfort. Then, at thirteen minutes past eight on the evening of the sixteenth of September, 1111, the sky split open and rained stars on Drakkenheim. The king, the queen, and every one of their children were home that night. Not one of them has been seen since, alive or otherwise.</p>
+      <p>What came next, any barfly could have called. The king's brother and sister fell to quarreling over his empty chair, then to raising armies over it, and spent five years bleeding the kingdom white. Both were dead by 1119, and neither ever sat down. Westem&auml;r is still a kingdom the way a dropped plate is still a plate, and its capital belongs to whoever can hold a street of it until supper.</p>
+      <p>But you didn't walk all this way for a history lesson. (The Courier keeps one on hand in the <a href="city-that-was.html">Archive pages</a> anyway, and recommends it warmly.) You came for what the stars left behind. There is a mist up there called the Haze, every color you have a name for and a few you don't, and in fifteen years it has not lifted once. There is a crystal called <strong class="delerium">delerium</strong> pushing up through the cobbles like frost through a field, humming to itself, and a stone the size of your fist will buy you a farm. Handle it wrong and it will buy you a funeral. Linger too long in that mist and you'll come back changed, if you come back as anything your mother would claim.</p>
+      <p>Five great outfits have come to settle what the corpse is for. They will not agree this side of Judgment, and every one of them is desperate for hands it can afford to lose. That, dear reader, is where you come in. Emberwood, last stop on the road, will sell all of you your boots and your beer and your bandages at prices that'll make you weep, and the Courier will be right here writing it all down. Read on. Come back. Buy next week's.</p>
     </div>
-    <p class="warning"><strong>Before you read on. (This part is out of character.)</strong> This is a dark fantasy game. Expect violence and gore, foul language, cannibalism, body horror and madness, monsters of every kind including rats and spiders, disaster and war, and religious zealotry. If there is something you would like kept off the table, tell your DM. No reason needed.</p>
-  </div>
+    <aside class="aside"><b>Editor's Aside: On Our Price.</b> The Courier costs one copper, which makes it the cheapest thing in Emberwood and very possibly the most useful. If you're reading a borrowed copy, the Editor forgives you. The last owner is unlikely to want it back.</aside>
+    <blockquote class="pull"><p>“Know your way out before you go in. Retreat is a plan. Running blind is a funeral.”</p><cite><a href="dark-city.html#rules">The Rules of the Road</a></cite></blockquote>
+  </article>
+
+  <hr class="break">
+
+  <section class="ledger-line" data-ledger-box aria-label="The latest Ledger" hidden>
+    <span class="ledger-line__tag">The Latest Ledger</span>
+    <span class="ledger-line__text" data-ledger-line></span>
+    <a href="ledger.html">Read the full Ledger</a>
+  </section>
+
 </main>
 
 <footer class="foot">Set, Inked, and Printed at Emberwood by A. T. Pell &amp; Staff &middot; The Courier Accepts No Liability for Readers Who Ignore Its Advice, and Very Little for Those Who Take It</footer>
 <script src="assets/js/ledger.js"></script>
 <script src="assets/js/site.js"></script>
-<script src="assets/js/polish.js"></script>
 </body>
 </html>

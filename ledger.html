@@ -8,21 +8,20 @@
 <meta name="description" content="Claims, contracts, and rumors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Rye&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,400;0,600;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/courier.css">
-<link rel="stylesheet" href="assets/css/sections.css">
-<link rel="stylesheet" href="assets/css/frontier.css">
 </head>
 <body data-page="ledger" data-defer-lexicon>
 <a class="skip" href="#main">Skip to the news</a>
 
 <header class="masthead">
   <div class="wrap masthead__top">
-    <div class="masthead__aside">One Copper. Refunds to Next of Kin.</div>
+    <p class="masthead__ear">One Copper. Refunds to Next of Kin.</p>
     <a class="masthead__title" href="index.html">The Emberwood Courier</a>
-    <div class="masthead__aside">Read It, Pass It On, Come Back Alive</div>
+    <p class="masthead__ear masthead__ear--r">Read It, Pass It On, Come Back Alive</p>
+    <p class="issue"><span>Vol. XV</span><span>Emberwood, on Champion's Way</span><span>One Copper</span></p>
   </div>
-  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list" data-nav></ul></nav>
+  <nav class="nav" aria-label="Sections"><ul class="wrap nav__list"><li><a href="index.html">Front Page</a></li><li><a href="why-have-you-come.html">Why Have You Come?</a></li><li><a href="dark-city.html">The Dark City</a></li><li><a href="banners.html">The Five Banners</a></li><li><a href="emberwood.html">Emberwood</a></li><li><a href="fortune.html">A Fortune in the Rubble</a></li><li><a href="city-that-was.html">The City That Was</a></li><li><a href="wider-world.html">The Wider World</a></li><li><a href="ledger.html" aria-current="page">The Ledger</a></li></ul></nav>
 </header>
 
 <main id="main" class="wrap page-body">
@@ -32,12 +31,13 @@
     <p class="deck" data-ledger-head></p>
     <div class="ledger-intro"><p>Harrow &amp; Vane, Underwriters, post this Ledger as a public service and a matter of record. Claims paid, claims open, and claims in dispute appear below. Names are printed with the consent of the policyholder or, where that is no longer practical, of the estate. The firm thanks its clients for their custom, several for their courage, and one for returning a pen.</p><p class="byline">The Clerks of the Old Tithe House</p></div>
   </div>
-  <div class="board" data-ledger></div>
-  <div class="gem-rule" data-gem></div>
+  <div class="board" data-ledger><p class="ledger-empty">The Ledger did not load. Refresh the page, or tell your DM.</p></div>
+  <hr class="break">
   <section aria-labelledby="past">
     <h2 id="past" class="subtitle">Earlier Ledgers</h2>
-    <div data-past style="margin-top:8px"></div>
+    <div data-past></div>
   </section>
+  <nav class="road-next" aria-label="Next page"><span class="road-next__tag">Back to the Start</span><a href="index.html">Front Page</a></nav>
 </main>
 
 
@@ -45,6 +45,5 @@
 <script src="assets/js/ledger.js"></script>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/sections.js"></script>
-<script src="assets/js/polish.js"></script>
 </body>
 </html>

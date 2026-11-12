@@ -2,40 +2,40 @@
    Positions follow the village layout in the sourcebook; all drawing is generated here. */
 (function () {
   var PLACES = [
-    { id: "caravan-court", name: "Caravan Court", pin: [505, 350], line: "The market, round the boarded-up well.", night: "Empty stalls, cold braziers, and a few armed men sitting on lead chests who'd like you to keep walking. Keep walking.",
+    { id: "caravan-court", name: "Caravan Court", pin: [505, 350], night: "Empty stalls, cold braziers, and a few armed men sitting on lead chests who'd like you to keep walking. Keep walking.",
       tag: "The Market", text: "A boarded-up well with a market grown up round it like moss on a headstone: wagons, canvas, cookfires, and a hundred voices shouting prices at once. Everything you need to die in the ruins is sold here, and everything you drag out of them is bought here, often enough by the same smiling hands. It shuts at sundown, when the whole Court goes off to drink what it made.",
       who: "Armin Gainsbury for gear, Eren Marlowe for provisions, and Orson Fairweather or Aldor the Immense if you have stones to sell" },
-    { id: "red-lion", name: "Red Lion Hotel", pin: [192, 162], line: "The only proper inn, up on the hill.", night: "Every window blazing and the chandelier going. You can see it from anywhere in camp. That's the whole idea.",
+    { id: "red-lion", name: "Red Lion Hotel", pin: [192, 162], night: "Every window blazing and the chandelier going. You can see it from anywhere in camp. That's the whole idea.",
       tag: "Lodging", text: "Red brick, stone lions on the steps, glass in every window, and the only true beds in the district, priced to keep you out of them. It was the Reeve's manor before the Fall, and Kosta Stavros still struts the halls like he runs the camp. Nobody's had the heart to tell him otherwise, mainly because nobody's had the interest. Word is he keeps a book on which crews come back. Ask him your odds. He'll tell you. He enjoys it.",
       who: "Kosta Stavros, the Reeve. The Amethyst Academy's buyer also keeps rooms here" },
-    { id: "bark-and-buzzard", name: "Bark & Buzzard", pin: [785, 530], line: "Food, drink, gossip, cottages to let.", night: "Packed to the door and roaring with the day's lies. Best place in camp to hear who didn't come back, and who's already bidding on their boots.",
+    { id: "bark-and-buzzard", name: "Bark & Buzzard", pin: [785, 530], night: "Packed to the door and roaring with the day's lies. Best place in camp to hear who didn't come back, and who's already bidding on their boots.",
       tag: "Tavern", text: "The one house in Emberwood where nobody's fixing to rob you, and the Alsbergs would carve that over the door if wood weren't so dear. A big hearth, a full cask, and a lamb stew worth crossing camp in the rain for. If your purse is thin, they'll let you one of the empty cottages out back. Don't ask why so many cottages are empty. You already know. And if anybody invites you out back to kick the can, the can kicks back.",
       who: "Karin and Holger Alsberg" },
-    { id: "gilded-lily", name: "The Gilded Lily", pin: [568, 458], line: "Spirits from afar and open stage nights.", night: "Lamps lit, curtain up, somebody singing badly and the whole room singing along. Nobody this close to Drakkenheim has ever been this cheerful for a sensible reason. Join in anyway.",
+    { id: "gilded-lily", name: "The Gilded Lily", pin: [568, 458], night: "Lamps lit, curtain up, somebody singing badly and the whole room singing along. Nobody this close to Drakkenheim has ever been this cheerful for a sensible reason. Join in anyway.",
       tag: "Tavern", text: "Purple paint, gold lamps, velvet curtains, and a proper stage, in a camp that can't grow a potato. How Madam Rochelle gets wine up that road is a mystery, and she likes it kept one. Spirits and wine and nothing you can chew, so eat first. A good many crews have spent their last fine night at these tables, and the stage is open to any brave soul who wants to learn what this crowd thinks of them.",
       who: "Madam Rochelle, who runs the room" },
-    { id: "skull-and-sword", name: "Skull & Sword Taphouse", pin: [665, 362], line: "Mind your purse. Mind your mouth.", night: "Somebody is being thrown out. Somebody is always being thrown out. Step left.",
+    { id: "skull-and-sword", name: "Skull & Sword Taphouse", pin: [665, 362], night: "Somebody is being thrown out. Somebody is always being thrown out. Step left.",
       tag: "Tavern", text: "A farmhouse somebody turned into a saloon, and the farmhouse hasn't forgiven anybody. The liquor's cheap, the floor's sticky, and the rumors are the best in camp if you can keep your teeth while you listen. There's a skull run through on a rusty sword by the door. Say hello to it. Out loud. Folks have skipped the courtesy and been reminded, and the reminders don't come gentle.",
       who: "Frida Longhorn behind the bar. The back tables are where the Queen's Men do their hiring" },
-    { id: "crowe-and-sons", name: "Crowe & Sons Smithy", pin: [340, 404], line: "Repairs, blades, and a red-headed tour guide.", night: "Forge banked, smith gone to the Bark & Buzzard. Your dents will keep till morning.",
+    { id: "crowe-and-sons", name: "Crowe & Sons Smithy", pin: [340, 404], night: "Forge banked, smith gone to the Bark & Buzzard. Your dents will keep till morning.",
       tag: "Smith", text: "A log cabin, a ringing forge, and a smith who'll turn your armor over in two sooty hands and name the crook who sold it to you, loud enough for the crook to hear. His girl sits up a dead tree on the road in, keeping count of who arrives. For a gold piece she'll walk you round the camp and tell you how everybody who used to drink in it died. She's very thorough.",
       who: "Tobias Crowe, and young Emma if she finds you first" },
-    { id: "chapel", name: "Chapel of Saint Ardenna", pin: [468, 262], line: "The Flame still burns. Healing and prayers.", night: "The Flame burns all night. It's the only light in camp that isn't selling something.",
+    { id: "chapel", name: "Chapel of Saint Ardenna", pin: [468, 262], night: "The Flame burns all night. It's the only light in camp that isn't selling something.",
       tag: "Faith", text: "A round little chapel of fieldstone under a copper dome, where the Sacred Flame still burns, which is more than you can say for the city. Its keeper is a decent woman in an indecent place. She'll heal you and bless you for an offering, and she will want the offering, because candles don't grow here either. If a friend comes back from the ruins not altogether themselves, start here, and start fast.",
       who: "Flamekeeper Hanna. The Knights of the Silver Order meet here too" },
-    { id: "shrine", name: "Shrine of the Old Gods", pin: [858, 90], line: "Standing stones and a herb-smoked hut.", night: "Candles on the pedestal, every night, lit by no one you'll ever see do it.",
+    { id: "shrine", name: "Shrine of the Old Gods", pin: [858, 90], night: "Candles on the pedestal, every night, lit by no one you'll ever see do it.",
       tag: "Faith", text: "Seven standing stones in a grove of dying trees, and down the path a hut leaking herb smoke through its roof. The old woman who keeps them holds to the old gods and has no use for yours. Half the camp calls her a witch. Not one of them has said it to her face twice. When the Chapel can't help you, she sometimes can, and she'll like you less for asking.",
       who: "Old Zoya" },
-    { id: "old-tithe-house", name: "The Old Tithe House", pin: [408, 412], line: "Harrow & Vane, Underwriters. Listen for the bell.", night: "Dark but for one clerk's lamp. Somebody's always doing the sums.",
+    { id: "old-tithe-house", name: "The Old Tithe House", pin: [408, 412], night: "Dark but for one clerk's lamp. Somebody's always doing the sums.",
       tag: "Business", text: "Back when there was a crown, the Reeve counted its taxes here. Now Harrow & Vane, Underwriters, keep their books in it, and they'll write a policy for anybody with coin and reason to worry, which in Emberwood is everybody with a pulse. There's a bell up in the cupola. It rings once for every claim paid. When it goes, the whole camp goes quiet and counts.",
       who: "clerks, mostly, and whoever has just lost a friend" },
-    { id: "watchtower", name: "Lantern Watchtower", pin: [625, 172], line: "Hooded Lantern scouts keep the road.", night: "Lanterns up top and somebody awake behind them, counting who goes north. And, later, who doesn't come back.",
+    { id: "watchtower", name: "Lantern Watchtower", pin: [625, 172], night: "Lanterns up top and somebody awake behind them, counting who goes north. And, later, who doesn't come back.",
       tag: "The Road North", text: "The tallest thing in camp, squatting on the north road beside the covered bridge that's your one way out to Drakkenheim. The Hooded Lanterns got their start right here. They've moved on to bigger trouble at the city gates and left a garrison behind to watch the road and look down on the rest of us, which from that height comes natural.",
       who: "the Hooded Lanterns, who are always looking for scouts" },
-    { id: "hendrix-farm", name: "Hendrix Farm", pin: [722, 606], line: "Pilgrims camp here before the last leg.", night: "Cookfires and hymns. The singing carries clear to the Red Lion. Some nights it's lovely. Some nights you'd swear something up north was singing back.",
+    { id: "hendrix-farm", name: "Hendrix Farm", pin: [722, 606], night: "Cookfires and hymns. The singing carries clear to the Red Lion. Some nights it's lovely. Some nights you'd swear something up north was singing back.",
       tag: "The Faithful", text: "One of the last farms in the valley with anybody still on it, though nothing's come up out of that ground in years. What it raises now is tents and cookfires. The pilgrims of the Falling Fire gather here before the last leg of the road to the Crater, fasting and singing and looking north with shining eyes. Some of them bring their children. Don't ask them to reconsider. People have. The pilgrims only smile and pray for you, which is somehow worse.",
       who: "Farmer Hendrix, and the Followers of the Falling Fire" },
-    { id: "eventide-manor", name: "Eventide Manor", pin: [335, 560], line: "Burned out, south end.", night: "Nobody goes near it after dark. Nobody will tell you why, and you'll notice they don't laugh when they don't tell you.",
+    { id: "eventide-manor", name: "Eventide Manor", pin: [335, 560], night: "Nobody goes near it after dark. Nobody will tell you why, and you'll notice they don't laugh when they don't tell you.",
       tag: "Local Color", text: "Burned out years back, and nobody's been fool enough to claim what's left. The camp's children will tell you about noises in the cellar, cold spots in high summer, and charred doors that open and shut on their own. Children will tell you a great many things. Go ahead and spend a night. The Courier would love the story.",
       who: "nobody, if you believe the grown-ups" }
   ];
@@ -872,9 +872,9 @@
         ctx.strokeStyle = "#17121f"; ctx.lineWidth = 2; ctx.strokeRect(sx, sy, sw, 25);
         ctx.fillStyle = "#241a20";
         ctx.textAlign = "center"; ctx.textBaseline = "middle";
-        var size = 15;
-        ctx.font = size + 'px Rye, Georgia, serif';
-        while (ctx.measureText(name).width > sw - 10 && size > 8) { size--; ctx.font = size + 'px Rye, Georgia, serif'; }
+        var size = 18;
+        ctx.font = size + 'px "League Gothic", "Arial Narrow", sans-serif';
+        while (ctx.measureText(name).width > sw - 10 && size > 8) { size--; ctx.font = size + 'px "League Gothic", "Arial Narrow", sans-serif'; }
         ctx.fillText(name, bx + w / 2, sy + 13);
       }
     });
@@ -909,8 +909,8 @@
     ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(1120, 262); ctx.lineTo(1120, 172); ctx.stroke();
     ctx.fillStyle = "#f0bb6b"; ctx.fillRect(1114, 160, 12, 14);
     ctx.save(); ctx.globalCompositeOperation = "screen"; wash(ctx, 1120, 167, 56, "rgba(240,160,70,.7)"); ctx.restore();
-    // Torn edge back to the paper
-    ctx.fillStyle = "#e8ddc5";
+    // Torn edge back to the dark page
+    ctx.fillStyle = "#0b0916";
     ctx.beginPath(); ctx.moveTo(0, H);
     for (x = 0; x <= W + 30; x += range(20, 48)) ctx.lineTo(x, H - range(4, 20));
     ctx.lineTo(W, H); ctx.closePath(); ctx.fill();
@@ -924,8 +924,9 @@
     canvas.setAttribute("role", "img");
     canvas.setAttribute("aria-label", "Hand-inked map of Emberwood village, with numbered places. The same places are listed in the directory below.");
     host.appendChild(canvas);
-    paint(canvas);
-    host.appendChild(paintNight(canvas));
+    mapCanvas = canvas;
+    // Let the words on the page appear first, then ink the map
+    setTimeout(function () { seed = 2311; paint(canvas); mapPainted = true; }, 0);
 
     var svg = svgEl("svg", { viewBox: (VIEW.x - FRAME) + " " + (VIEW.y - FRAME) + " " + (VIEW.w + 2 * FRAME) + " " + (VIEW.h + 2 * FRAME), "class": "map-overlay" });
     var defs = svgEl("defs", {}, svg);
@@ -953,27 +954,48 @@
       });
     });
     host.appendChild(svg);
+    mapOverlay = svg;
+
+    // On a phone the pins are drawn larger, so the numbers can be read
+    var phone = window.matchMedia("(max-width: 620px)");
+    function sizePins() {
+      var big = phone.matches;
+      svg.querySelectorAll(".pin").forEach(function (g) {
+        g.classList.toggle("pin--big", big);
+        g.querySelector(".pin__disc").setAttribute("r", big ? 27 : 16);
+        g.querySelector(".pin__ring").setAttribute("r", big ? 32 : 21);
+        g.querySelector(".pin__num").setAttribute("y", big ? 11 : 6);
+      });
+    }
+    sizePins();
+    if (phone.addEventListener) phone.addEventListener("change", sizePins);
+
+    // A tap that lands near a pin counts as a tap on it: a thumb-sized target around every number
+    svg.addEventListener("click", function (e) {
+      if (e.target.closest(".pin")) return;
+      var m = svg.getScreenCTM();
+      if (!m) return;
+      var pt = svg.createSVGPoint();
+      pt.x = e.clientX; pt.y = e.clientY;
+      pt = pt.matrixTransform(m.inverse());
+      var reach = Math.max(34, 26 / m.a), best = null, bestD = reach * reach;
+      PLACES.forEach(function (p) {
+        var dx = p.pin[0] - pt.x, dy = p.pin[1] - pt.y, d = dx * dx + dy * dy;
+        if (d < bestD) { best = p; bestD = d; }
+      });
+      if (best) select(best.id, true);
+    });
+
+    // The pins beckon a few times on a reader's first visit
+    var seen = false;
+    try { seen = sessionStorage.getItem("courier-pins") === "1"; sessionStorage.setItem("courier-pins", "1"); } catch (e) { /* private window */ }
+    if (!seen) svg.querySelectorAll(".pin").forEach(function (g) { g.classList.add("pin--hint"); });
   }
 
-  function buildDirectory(host) {
-    PLACES.forEach(function (p, i) {
-      var li = document.createElement("li");
-      var b = document.createElement("button");
-      b.type = "button";
-      b.setAttribute("data-id", p.id);
-      b.setAttribute("aria-pressed", "false");
-      var num = document.createElement("span");
-      num.className = "directory__num"; num.textContent = i + 1;
-      var body = document.createElement("span");
-      var name = document.createElement("span");
-      name.className = "directory__name"; name.textContent = p.name;
-      var line = document.createElement("span");
-      line.className = "directory__line"; line.textContent = p.line;
-      body.appendChild(name); body.appendChild(line);
-      b.appendChild(num); b.appendChild(body);
-      b.addEventListener("click", function () { select(p.id, true); scrollToNote(true); });
-      li.appendChild(b);
-      host.appendChild(li);
+  /* The directory is written into the page. This only makes its entries open the matching note. */
+  function hookDirectory(host) {
+    host.querySelectorAll("button[data-id]").forEach(function (b) {
+      b.addEventListener("click", function () { select(b.getAttribute("data-id"), true); scrollToNote(true); });
     });
   }
 
@@ -1033,15 +1055,26 @@
     }
   }
 
+  var mapCanvas = null, mapOverlay = null, mapPainted = false, nightCanvas = null;
   drawMap(document.querySelector("[data-map]"));
-  buildDirectory(document.querySelector("[data-directory]"));
+  hookDirectory(document.querySelector("[data-directory]"));
   select(location.hash.slice(1) || "caravan-court", false);
+
+  // The place notes only show on a tap, so tell the reading-time counter how many words they hold
+  document.body.setAttribute("data-extra-words", PLACES.reduce(function (n, p) { return n + (p.text + " " + p.who).split(/\s+/).length; }, 0));
 
   var nightBtn = document.querySelector("[data-night]");
   if (nightBtn) nightBtn.addEventListener("click", function () {
+    if (!mapPainted) return;
     isNight = !isNight;
     nightBtn.setAttribute("aria-pressed", isNight ? "true" : "false");
     nightBtn.textContent = isNight ? "Back to Daylight" : "After Dark";
+    // The night view is only drawn the first time somebody asks for it
+    if (isNight && !nightCanvas) {
+      nightCanvas = paintNight(mapCanvas);
+      mapOverlay.parentNode.insertBefore(nightCanvas, mapOverlay);
+      void nightCanvas.offsetWidth;
+    }
     document.querySelector("[data-map]").classList.toggle("is-night", isNight);
     if (tourAt < 0) select(currentId, false);
   });
@@ -1051,7 +1084,7 @@
   var street = document.querySelector("[data-street]");
   if (street) {
     var drawStreet = function () { seed = 907; paintStreet(street); };
-    if (document.fonts && document.fonts.load) document.fonts.load('15px Rye').then(drawStreet, drawStreet);
+    if (document.fonts && document.fonts.load) document.fonts.load('18px "League Gothic"').then(drawStreet, drawStreet);
     else drawStreet();
   }
 })();
