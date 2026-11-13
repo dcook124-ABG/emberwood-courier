@@ -149,19 +149,6 @@
     mark();
   }
 
-  /* Front Page: the latest Ledger in one line. The box stays hidden if the Ledger file is missing or broken. */
-  function initLedgerLine() {
-    var line = document.querySelector("[data-ledger-line]");
-    var data = window.COURIER_LEDGER;
-    if (!line || !data || !data.length) return;
-    var latest = data[0];
-    var open = latest.claims.filter(function (c) { return c.status === "Open"; }).length;
-    line.textContent = "No. " + latest.issue + ", posted " + latest.posted + ". " + latest.bell + " " +
-      latest.claims.length + " claims, " + open + " still open, " + latest.posted_notices.length + " notices about town.";
-    var box = line.closest("[data-ledger-box]");
-    if (box) box.hidden = false;
-  }
-
   /* Front Page: stamp the steps this reader has finished */
   function initStamps() {
     var host = document.querySelector("[data-path]");
@@ -293,7 +280,6 @@
     initFolds();
     initFlips();
     initStrip(main, header);
-    initLedgerLine();
     initStamps();
     initOverheard(main);
     initRoadNext(document.body.getAttribute("data-page"));
