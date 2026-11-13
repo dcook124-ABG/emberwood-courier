@@ -94,7 +94,7 @@
     document.querySelectorAll(".flip").forEach(setFaces);
     document.addEventListener("click", function (e) {
       var card = e.target.closest && e.target.closest(".flip");
-      if (!card) return;
+      if (!card || e.target.closest("a")) return;   // a link on a card is followed, not turned
       var turned = card.classList.toggle("is-turned");
       setFaces(card);
       if (e.target.closest(".flip__btn")) {

@@ -1,4 +1,4 @@
-/* Behaviour for the section pages: the grudge web, the character worksheet, the Assayer's Plate,
+/* Behaviour for the section pages: the grudge web, the Assayer's Plate,
    the Ledger, and the timeline.
 
    The words for the factions, the timeline and the royals live in their own pages. The Ledger's
@@ -64,83 +64,6 @@
       host.appendChild(n);
     });
     pick(banners[0].id);
-  }
-
-  /* Why Have You Come: answers saved in this browser, ready to paste to the DM */
-  function initEntry() {
-    var form = document.querySelector("[data-entry]");
-    if (!form) return;
-    var KEY = "courier-why", saved = {};
-    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { saved = {}; }
-    var fields = form.querySelectorAll("[data-field]");
-    var bg = form.querySelector('[data-field="background"]');
-    var bgLabel = form.querySelector("[data-bg-question]");
-    var status = form.querySelector("[data-entry-status]");
-    form.addEventListener("submit", function (e) { e.preventDefault(); });
-
-    // Each background's question is the one printed on the back of its card
-    function askFor(name) {
-      var out = "";
-      document.querySelectorAll(".cards .flip").forEach(function (card) {
-        var title = card.querySelector(".flip__title"), ask = card.querySelector(".flip__ask");
-        if (title && ask && title.textContent.trim() === name) out = ask.textContent.trim();
-      });
-      return out;
-    }
-    function syncQuestion() {
-      bgLabel.textContent = askFor(bg.value) || "Choose a background above, and it'll ask you something.";
-    }
-    function store() {
-      var data = {};
-      fields.forEach(function (f) { data[f.getAttribute("data-field")] = f.value; });
-      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) { /* private window */ }
-    }
-    fields.forEach(function (f) {
-      var name = f.getAttribute("data-field");
-      if (saved[name]) f.value = saved[name];
-      f.addEventListener("input", function () { if (f === bg) syncQuestion(); store(); });
-      f.addEventListener("change", function () { if (f === bg) syncQuestion(); store(); });
-    });
-    syncQuestion();
-
-    function text() {
-      var out = ["**Why Have You Come?**"];
-      fields.forEach(function (f) {
-        if (!f.value.trim()) return;
-        var label = f.getAttribute("data-field") === "bg-answer" ? bgLabel.textContent : f.getAttribute("data-label");
-        out.push("**" + label + "**\n" + f.value.trim());
-      });
-      return out.join("\n\n");
-    }
-    form.querySelector("[data-copy]").addEventListener("click", function () {
-      var body = text();
-      function done() { status.textContent = "Copied. Paste it to your DM."; }
-      function fallback() {
-        var t = document.createElement("textarea");
-        t.value = body; t.style.position = "fixed"; t.style.opacity = "0";
-        document.body.appendChild(t); t.select();
-        try { document.execCommand("copy"); done(); } catch (e) { status.textContent = "Couldn't copy on this device. Do it the old way: write it down."; }
-        t.remove();
-      }
-      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(body).then(done, fallback);
-      else fallback();
-    });
-
-    // Start Over asks twice: the first tap arms it, the second clears
-    var clear = form.querySelector("[data-clear]"), clearLabel = clear.textContent, armed = null;
-    function disarm() { clearTimeout(armed); armed = null; clear.textContent = clearLabel; }
-    clear.addEventListener("click", function () {
-      if (!armed) {
-        clear.textContent = "Tap again to clear everything";
-        armed = setTimeout(disarm, 5000);
-        return;
-      }
-      disarm();
-      fields.forEach(function (f) { f.value = ""; });
-      store(); syncQuestion();
-      status.textContent = "Cleared. A clean slate. Emberwood won't hand you many.";
-    });
-    clear.addEventListener("blur", function () { if (armed) disarm(); });
   }
 
   /* The Assayer's Plate */
@@ -314,5 +237,4 @@
   initPlate();
   initLedger();
   initTimeline();
-  initEntry();
 })();

@@ -66,7 +66,7 @@ body > * { position: relative; z-index: 1; }
 
 img, svg { max-width: 100%; }
 p { margin: 0 0 1em; }
-h1, h2, h3 { margin: 0; font-weight: 400; }
+h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 ol, ul { margin: 0; padding: 0; list-style: none; }
 button { font: inherit; color: inherit; }
 
@@ -171,7 +171,7 @@ hr.break--head { margin: 18px 0 clamp(22px, 3vw, 30px); }
 
 /* Parchment. Everything pinned up shares these colours. */
 .note, .aside, .notice, .poster-face, .card-back, .plate, .lex { background: var(--paper); color: var(--ink); }
-.note a, .aside a, .notice a, .lex a { color: var(--ink-violet); border-bottom-color: var(--ink-violet); }
+.note a, .aside a, .notice a, .lex a, .card-back a { color: var(--ink-violet); border-bottom-color: var(--ink-violet); }
 
 /* Pinned notes */
 .note-wrap { position: relative; }
@@ -412,6 +412,23 @@ html:not(.js) .web-layout { grid-template-columns: 1fr; }
 }
 
 /* ---- Why Have You Come? ---- */
+.inshort + .advisory { margin-top: 18px; }
+.advisory + .inshort { margin-top: 18px; }
+.primer li { position: relative; padding-left: 20px; margin-top: 7px; line-height: 1.5; }
+.primer li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); }
+.primer .primer__more { margin-top: 12px; color: var(--dim); font-size: 17px; }
+.life { margin-top: clamp(34px, 5vw, 54px); padding-top: clamp(26px, 4vw, 40px); border-top: 1px solid var(--line); }
+.subtitle + .life { margin-top: 22px; padding-top: 0; border-top: 0; }
+.life__title { font: 900 clamp(27px, 3.8vw, 38px)/1.1 var(--head); text-align: center; }
+.life__text { max-width: 40em; margin: 12px auto 0; }
+.life__limit { text-align: center; font: 400 17px/1.3 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 12px 0 0; }
+.life__ask { max-width: 34em; margin: 14px auto 0; text-align: center; font: italic 400 clamp(19px, 2.2vw, 22px)/1.4 var(--head); color: #cdb4ff; }
+.life__ask b { display: block; font: 400 17px/1.3 var(--label); letter-spacing: .16em; text-transform: uppercase; font-style: normal; color: var(--teal); margin-bottom: 2px; }
+.life .cards { margin-top: 22px; }
+.idea { margin: 4px 0 0; }
+.idea dt { font: 400 17px/1.2 var(--label); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-violet); margin-top: 10px; }
+.idea dd { margin: 2px 0 0; line-height: 1.5; }
+.card-front p { margin: 0; }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
 .card-front { background: #1d1546; border: 1px solid rgba(165, 123, 245, .5); font-size: 17px; }
 .card-back { font-size: 17px; }
@@ -422,19 +439,8 @@ html:not(.js) .web-layout { grid-template-columns: 1fr; }
 .asks { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 34px; }
 .asks li { padding: 13px 0; border-bottom: 1px solid var(--line); line-height: 1.5; }
 .asks b { display: block; font: 400 20px/1.2 var(--label); letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
-.entry { border: 1px solid rgba(233, 192, 112, .38); background: var(--panel); padding: clamp(18px, 3vw, 32px); margin-top: 18px; }
-.entry label { display: block; font: 700 18px/1.3 var(--head); margin: 18px 0 6px; }
-.entry label:first-child { margin-top: 0; }
-.entry input, .entry select, .entry textarea { width: 100%; font: 400 18px/1.45 var(--body); color: var(--moon); background: #130e2c; border: 1px solid var(--dim); border-radius: 0; padding: 9px 11px; }
-.entry textarea { min-height: 76px; resize: vertical; display: block; }
-.entry input:focus, .entry select:focus, .entry textarea:focus { outline: 2px solid var(--teal); outline-offset: 0; border-color: var(--teal); }
-.entry__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
-.entry__row label { margin-top: 0; }
-.entry__actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
-.entry__status { font-style: italic; color: var(--teal); }
-.entry__note { font-style: italic; color: var(--dim); font-size: 16.5px; margin: 10px 0 0; }
 @media (max-width: 900px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) { .cards, .asks, .entry__row { grid-template-columns: 1fr; } .entry .entry__row > div + div label { margin-top: 18px; } }
+@media (max-width: 640px) { .cards, .asks { grid-template-columns: 1fr; } }
 
 /* ---- The Ledger ---- */
 .ledger-intro { max-width: 40em; margin: 16px auto 0; }
