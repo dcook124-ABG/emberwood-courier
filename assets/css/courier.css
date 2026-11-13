@@ -412,22 +412,24 @@ html:not(.js) .web-layout { grid-template-columns: 1fr; }
 }
 
 /* ---- Why Have You Come? ---- */
-/* The DM's note: a page torn from a notepad and taped on. Out of character, so it looks like nothing else in the paper. */
-.dm-note { position: relative; max-width: 37em; margin: 34px auto 0; transform: rotate(-.8deg); filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .6)); }
-.dm-note::before { content: ""; position: absolute; z-index: 2; left: 50%; top: -9px; width: 104px; height: 28px; margin-left: -52px; transform: rotate(2.5deg); background: rgba(233, 222, 180, .55); box-shadow: 0 1px 2px rgba(0, 0, 0, .25); }
+/* The DM\x27s note: a folded letter in a slanted hand, closed with wax and tucked into the paper. Out of character. */
+.dm-note { max-width: 38em; margin: 36px auto 0; transform: rotate(.6deg); filter: drop-shadow(0 10px 16px rgba(0, 0, 0, .6)); }
 .dm-note__paper {
-  --rule: 30px; padding: 26px 24px 26px 46px; color: var(--ink); font: 400 17.5px/var(--rule) var(--body);
-  background:
-    linear-gradient(90deg, transparent 31px, rgba(91, 47, 148, .4) 31px, rgba(91, 47, 148, .4) 32.5px, transparent 32.5px),
-    repeating-linear-gradient(transparent 0, transparent calc(var(--rule) - 1px), rgba(60, 80, 130, .26) calc(var(--rule) - 1px), rgba(60, 80, 130, .26) var(--rule)) 0 20px,
-    #f4f0e6;
-  clip-path: polygon(0 9px, 3% 3px, 7% 10px, 11% 4px, 16% 9px, 20% 2px, 25% 8px, 30% 3px, 34% 10px, 39% 5px, 44% 9px, 48% 2px, 53% 8px, 58% 4px, 62% 10px, 67% 3px, 72% 9px, 76% 4px, 81% 10px, 86% 3px, 90% 8px, 95% 2px, 100% 8px, 100% 100%, 0 100%);
+  position: relative; padding: 34px clamp(24px, 6vw, 46px) 58px; background: linear-gradient(175deg, #efe6cf, #e2d5b4); color: var(--ink);
+  clip-path: polygon(0 1.2%, 6% 0, 15% .9%, 27% .1%, 41% 1%, 56% 0, 70% .8%, 84% .1%, 100% 1%, 99.4% 22%, 100% 47%, 99.3% 73%, 100% 99%, 88% 100%, 72% 99.1%, 55% 100%, 37% 99.2%, 20% 100%, .7% 99.2%, 0 76%, .8% 50%, 0 24%);
 }
-.dm-note__paper p { margin: 0 0 var(--rule); }
-.dm-note__paper p:last-child { margin-bottom: 0; }
-.dm-note__head { font-weight: 600; font-size: 18.5px; }
-.dm-note + .inshort { margin-top: 34px; }
-@media (max-width: 620px) { .dm-note__paper { padding-left: 40px; padding-right: 16px; } }
+.dm-note__paper p { font: italic 400 18px/1.62 var(--body); margin: 0 0 1em; }
+.dm-note__paper p:last-of-type { margin-bottom: 0; }
+.dm-note__paper .dm-note__head { font: italic 700 clamp(23px, 4.4vw, 30px)/1.2 var(--head); margin-bottom: 14px; }
+.dm-note__head em { display: block; margin-top: 4px; font: italic 400 16.5px/1.3 var(--body); color: var(--ink-soft); }
+.dm-note__fold { position: absolute; left: 0; right: 0; top: 52%; border-top: 1px solid rgba(90, 70, 40, .22); box-shadow: 0 1px 0 rgba(255, 255, 255, .35); }
+/* The wax is the only place this red appears */
+.dm-note__seal {
+  position: absolute; right: clamp(18px, 6vw, 44px); bottom: 12px; width: 66px; height: 66px; border-radius: 50%; display: grid; place-items: center; transform: rotate(-12deg);
+  background: radial-gradient(circle at 36% 30%, #c8402f, #8f1d14 58%, #5c0f0a); box-shadow: 0 0 0 4px #8f1d14, 0 0 0 5px #6b130d, 0 3px 6px rgba(0, 0, 0, .5), inset 0 0 0 3px rgba(255, 255, 255, .12);
+  font: 400 30px/1 var(--black); color: #f1cdbf; text-shadow: 0 1px 0 #5c0f0a;
+}
+.dm-note + .inshort { margin-top: 38px; }
 .primer li { position: relative; padding-left: 20px; margin-top: 7px; line-height: 1.5; }
 .primer li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); }
 .primer .primer__more { margin-top: 12px; color: var(--dim); font-size: 17px; }
