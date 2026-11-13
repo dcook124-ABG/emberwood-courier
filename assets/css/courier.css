@@ -418,7 +418,15 @@ html:not(.js) .web-layout { grid-template-columns: 1fr; }
 .primer li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); }
 .primer .primer__more { margin-top: 12px; color: var(--dim); font-size: 17px; }
 .life { margin-top: clamp(34px, 5vw, 54px); padding-top: clamp(26px, 4vw, 40px); border-top: 1px solid var(--line); }
-.subtitle + .life { margin-top: 22px; padding-top: 0; border-top: 0; }
+.crests + .life { margin-top: clamp(30px, 4.4vw, 46px); }
+.life__badge { display: block; width: 76px; height: 76px; margin: 0 auto 10px; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .6)); }
+/* The statement the whole page is about: lit by the Haze, like the city's name on the Front Page */
+.statement { text-align: center; }
+.statement__big { display: block; font: 900 clamp(54px, 15vw, 132px)/.95 var(--head); letter-spacing: -.02em; padding-bottom: .08em; white-space: nowrap;
+  background: var(--haze); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 26px rgba(150, 105, 240, .5)); animation: lit 22s linear infinite; }
+.statement__small { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 2vw, 22px); font: 400 clamp(26px, 5.4vw, 50px)/1 var(--label); letter-spacing: .18em; text-transform: uppercase; color: var(--moon); margin-top: 6px; }
+.statement__small::before, .statement__small::after { content: ""; flex: 1; max-width: 220px; height: 7px; border-top: 3px solid var(--moon); border-bottom: 1px solid var(--moon); }
 .life__title { font: 900 clamp(27px, 3.8vw, 38px)/1.1 var(--head); text-align: center; }
 .life__text { max-width: 40em; margin: 12px auto 0; }
 .life__limit { text-align: center; font: 400 17px/1.3 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 12px 0 0; }
