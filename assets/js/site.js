@@ -108,7 +108,7 @@
   function countWords(node) { return (node.textContent || "").split(/\s+/).filter(Boolean).length; }
   function initReadingTime(main) {
     var head = main.querySelector(".page-head");
-    if (!head) return;
+    if (!head || document.body.hasAttribute("data-no-time")) return;   // some pages ask not to be timed
     var words = countWords(main) + (parseInt(document.body.getAttribute("data-extra-words"), 10) || 0);
     main.querySelectorAll("script, style, svg, select, .road-next").forEach(function (n) { words -= countWords(n); });
     var time = el("span", "time", Math.max(1, Math.round(words / 230)) + " min read");
@@ -256,7 +256,7 @@
         if (skipTag.test(p.tagName)) return true;
         // Bold words are labels, except inside a story, where they are part of the sentence
         if ((p.tagName === "B" || p.tagName === "STRONG") && !p.closest(".story__body")) return true;
-        if (p.matches(".flip, .start, .advisory, .onpage, .road-next")) return true;
+        if (p.matches(".flip, .start, .advisory, .dm-note, .onpage, .road-next")) return true;
       }
       return false;
     }

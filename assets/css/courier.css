@@ -412,8 +412,22 @@ html:not(.js) .web-layout { grid-template-columns: 1fr; }
 }
 
 /* ---- Why Have You Come? ---- */
-.inshort + .advisory { margin-top: 18px; }
-.advisory + .inshort { margin-top: 18px; }
+/* The DM's note: a page torn from a notepad and taped on. Out of character, so it looks like nothing else in the paper. */
+.dm-note { position: relative; max-width: 37em; margin: 34px auto 0; transform: rotate(-.8deg); filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .6)); }
+.dm-note::before { content: ""; position: absolute; z-index: 2; left: 50%; top: -9px; width: 104px; height: 28px; margin-left: -52px; transform: rotate(2.5deg); background: rgba(233, 222, 180, .55); box-shadow: 0 1px 2px rgba(0, 0, 0, .25); }
+.dm-note__paper {
+  --rule: 30px; padding: 26px 24px 26px 46px; color: var(--ink); font: 400 17.5px/var(--rule) var(--body);
+  background:
+    linear-gradient(90deg, transparent 31px, rgba(91, 47, 148, .4) 31px, rgba(91, 47, 148, .4) 32.5px, transparent 32.5px),
+    repeating-linear-gradient(transparent 0, transparent calc(var(--rule) - 1px), rgba(60, 80, 130, .26) calc(var(--rule) - 1px), rgba(60, 80, 130, .26) var(--rule)) 0 20px,
+    #f4f0e6;
+  clip-path: polygon(0 9px, 3% 3px, 7% 10px, 11% 4px, 16% 9px, 20% 2px, 25% 8px, 30% 3px, 34% 10px, 39% 5px, 44% 9px, 48% 2px, 53% 8px, 58% 4px, 62% 10px, 67% 3px, 72% 9px, 76% 4px, 81% 10px, 86% 3px, 90% 8px, 95% 2px, 100% 8px, 100% 100%, 0 100%);
+}
+.dm-note__paper p { margin: 0 0 var(--rule); }
+.dm-note__paper p:last-child { margin-bottom: 0; }
+.dm-note__head { font-weight: 600; font-size: 18.5px; }
+.dm-note + .inshort { margin-top: 34px; }
+@media (max-width: 620px) { .dm-note__paper { padding-left: 40px; padding-right: 16px; } }
 .primer li { position: relative; padding-left: 20px; margin-top: 7px; line-height: 1.5; }
 .primer li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); }
 .primer .primer__more { margin-top: 12px; color: var(--dim); font-size: 17px; }
